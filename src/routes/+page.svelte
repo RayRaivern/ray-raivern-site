@@ -1,5 +1,5 @@
 <div class="b-planet">
-  <span>WORK</span>
+	<span>WORK</span>
 </div>
 <div class="s-planet"></div>
 
@@ -17,14 +17,14 @@
 		background: #b0c6ff;
 		margin: 20px;
 
-    color: rgba(255, 255, 255, 0.6);
-    -webkit-text-stroke: 0.5px black;
-    text-shadow: 2px 5px 2px #7C6BA7;
-    font-size: 50px;
-    line-height: 180px;
+		color: rgba(255, 255, 255, 0.6);
+		-webkit-text-stroke: 0.5px black;
+		text-shadow: 2px 5px 2px #7c6ba7;
+		font-size: 50px;
+		line-height: 180px;
 		text-align: center;
 
-    box-shadow: 0 0 30px 15px rgba(176, 198, 255, 0.6);
+		box-shadow: 0 0 30px 15px rgba(176, 198, 255, 0.6);
 	}
 
 	.s-planet {
