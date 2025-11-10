@@ -12,3 +12,9 @@
 <Stars />
 
 {@render children?.()}
+
+<style>
+  :global(html) {
+    background-color: black;
+  }
+</style>
