@@ -1,22 +1,32 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { starGenerator } from '$lib';
+  import { browser } from '$app/environment';
 
 	let canvas: HTMLCanvasElement;
-	let width = 0;
-	let height = 0;
+	let width = $state(0);
+	let height = $state(0);
 
 	function updateDimensions() {
 		width = window.innerWidth;
 		height = window.innerHeight;
 	}
 
-	onMount(() => {
+  $effect(() => {
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+    }
+  })
+
+  $effect(() => {
+    if(!browser) return;
 		const ctx = canvas.getContext('2d');
 
-		updateDimensions();
-    let starCount = window.innerWidth * 1.5;
+    let starCount = window.innerWidth * 0.15;
 		const stars = starGenerator(starCount, 1, width, height);
+    let animationID: number;
 
 		function animate(time: number) {
 			if (!ctx) throw new Error('Failed to get 2d context for canvas.');
@@ -36,10 +46,14 @@
 				ctx.fill();
 			});
 
-			requestAnimationFrame(animate);
+			animationID = requestAnimationFrame(animate);
 		}
 
-		requestAnimationFrame(animate);
+		animationID = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationID);
+    }
 	});
 </script>
 

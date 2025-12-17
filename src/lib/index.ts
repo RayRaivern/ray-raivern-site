@@ -8,10 +8,15 @@ type Star = {
   phase: number;
 };
 
-const colors: string[] = ['#ffffff', '#BFE9EE', '#D9CAED', '#EEE9BB'];
+export type Orbit = {
+  name: string;
+  link: string;
+  image: string;
+}
 
 export function starGenerator(count: number, radius: number, width: number, height: number): Star[] {
   const stars: Star[] = [];
+  const colors: string[] = ['#ffffff', '#BFE9EE', '#D9CAED', '#EEE9BB'];
 	for (let i = 0; i < count; i++) {
 		stars.push({
 			x: Math.random() * width,

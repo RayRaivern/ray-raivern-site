@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-  import Stars from '$lib/Stars.svelte';
+  import Stars from '$lib/components/Stars.svelte';
 
 	let { children } = $props();
 </script>

@@ -1,0 +1,17 @@
+.default {
+  --background: var(--black);
+  --on-background: var(--white);
+  --primary-container: var(--teal-neutral);
+  --on-primary-container: var(--white);
+}
+
+@media (max-width: 600px)
+
+.palette {
+  --black: #000000;
+  --white: #ffffff;
+  --teal-neutral: #5F8188;
+  --teal-dark: #20373C;
+  --red-neutral: #996F70;
+  --red-dark: #554344;
+}
