@@ -1,6 +1,14 @@
 <script lang="ts">
+  import '$lib/md_token.css';
 	import favicon from '$lib/assets/favicon.svg';
   import Stars from '$lib/components/Stars.svelte';
+  import ThemeChanger from '$lib/scripts/theme-changer.svelte';
+  import ref from '$lib/ref.json';
+  import { setContext } from 'svelte';
+
+  const palette = ref.palette;
+  let theme = $state({ color: palette['teal-neutral'] });
+  setContext('theme', theme);
 
 	let { children } = $props();
 </script>
@@ -9,6 +17,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<ThemeChanger color={theme.color}/>
 <Stars />
 
 {@render children?.()}

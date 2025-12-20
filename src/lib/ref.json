@@ -1,0 +1,10 @@
+{
+  "palette":  {
+    "black": "#000000",
+    "white": "#ffffff",
+    "teal-neutral": "#5F8188",
+    "teal-dark": "#20373C",
+    "red-neutral": "#996F70",
+    "red-dark": "#554344"
+  }
+}

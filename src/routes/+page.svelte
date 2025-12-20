@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Planet from "$lib/components/Planet.svelte";
+  import ref from "$lib/ref.json"; 
+
+  const palette = ref.palette;
 </script>
 
-<Planet radius="100px" colorNeutral="#5F8188" colorLight="white" colorDark="black"/>
+<Planet radius="100px" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black"/>
+<Planet radius="100px" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black"/>
 
 <!-- <div class="b-planet"> -->
 <!-- 	<span>WORK</span> -->
