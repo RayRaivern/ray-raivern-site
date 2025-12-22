@@ -1,9 +1,9 @@
 <script lang="ts">
-  import '$lib/md_token.css';
+  import '$lib/styles/md_token.css';
 	import favicon from '$lib/assets/favicon.svg';
   import Stars from '$lib/components/Stars.svelte';
   import ThemeChanger from '$lib/scripts/theme-changer.svelte';
-  import ref from '$lib/ref.json';
+  import ref from '$lib/styles/ref.json';
   import { setContext } from 'svelte';
 
   const palette = ref.palette;

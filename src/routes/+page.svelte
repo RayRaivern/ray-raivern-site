@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Planet from "$lib/components/Planet.svelte";
-  import ref from "$lib/ref.json"; 
+  import ref from "$lib/styles/ref.json"; 
 
   const palette = ref.palette;
 </script>
