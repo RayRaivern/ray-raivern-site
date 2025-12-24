@@ -1,0 +1,21 @@
+:root {
+  /*    Layout    */  
+  --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
+
+
+  /*    Typography    */
+  --sys-font-size: var(--ref-font-size-small);
+  --sys-font-size-alt: var(--ref-font-size-alt);
+}
+
+@media (min-width: 1200px) {
+  :root {
+    /*    Layout    */  
+    --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
+
+
+    /*    Typography    */
+    --sys-font-size: var(--ref-font-size-small);
+    --sys-font-size-alt: var(--ref-font-size-alt);
+  }
+}

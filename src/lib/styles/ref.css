@@ -1,0 +1,20 @@
+:root {
+  /*    Layout    */
+
+  /* small */
+  --ref-layout-margin-horizontal-small: 16px;
+  --ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
+
+  /* medium */
+  --ref-layout-margin-horizontal-medium: 24px; 
+
+  /* large */
+  --ref-layout-margin-horizontal-large: 24px;
+
+
+  /*    Typography    */
+
+  /* small */
+  --ref-font-size-small: 1rem;
+  --ref-font-size-alt: 0.8em;
+}
