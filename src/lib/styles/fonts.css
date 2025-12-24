@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: normal;
+  src: url(/fonts/orbitron/orbitron-v35-latin-500.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: bold;
+  src: url(/fonts/orbitron/orbitron-v35-latin-700.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-weight: normal;
+  src: url(/fonts/oxanium/oxanium-v21-latin-regular.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Oxanium';
+  font-style: normal;
+  font-weight: bold;
+  src: url(/fonts/oxanium/oxanium-v21-latin-700.woff2) format(woff2);
+}

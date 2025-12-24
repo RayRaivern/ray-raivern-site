@@ -1,20 +1,29 @@
 :root {
-  /*    Layout    */
+  /*    EFFECT    */  
+    --ref-effect-blur: 0.8px;
 
-  /* small */
-  --ref-layout-margin-horizontal-small: 16px;
-  --ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
+  /*    LAYOUT    */
 
-  /* medium */
-  --ref-layout-margin-horizontal-medium: 24px; 
+    /* small */
+      --ref-layout-margin-horizontal-small: 16px;
+      --ref-layout-margin-top-small: 64px;
+      --ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
 
-  /* large */
-  --ref-layout-margin-horizontal-large: 24px;
+    /* medium */
+      --ref-layout-margin-horizontal-medium: 24px; 
+
+    /* large */
+      --ref-layout-margin-horizontal-large: 24px;
 
 
-  /*    Typography    */
+  /*    TYPOGRAPHY    */
+    --ref-font-alt-size: 0.8em;
+    --ref-font-display-family: 'Orbitron';
 
-  /* small */
-  --ref-font-size-small: 1rem;
-  --ref-font-size-alt: 0.8em;
+    /* small */
+      --ref-font-display-size-small: 40px;
+      --ref-font-body-size-small: 1rem;
+
+    /* medium */
+      --ref-font-display-size-medium: ;
 }

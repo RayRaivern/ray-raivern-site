@@ -1,21 +1,28 @@
 :root {
-  /*    Layout    */  
-  --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
+  /*    EFFECT    */  
+    --sys-effect-blur: var(--ref-effect-blur);
+
+  /*    LAYOUT    */  
+    /* small */
+      --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
+      --sys-layout-margin-top: var(--ref-layout-margin-top-small);
 
 
-  /*    Typography    */
-  --sys-font-size: var(--ref-font-size-small);
-  --sys-font-size-alt: var(--ref-font-size-alt);
+  /*    TYPOGRAPHY    */
+    --sys-font-alt-size: var(--ref-font-alt-size);
+    --sys-font-display-family: var(--ref-font-display-family);
+
+    /* small */
+    --sys-font-display-size: var(--ref-font-display-size-small);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) { /* large */
   :root {
-    /*    Layout    */  
-    --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
+    /*    LAYOUT    */  
+      --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
 
 
-    /*    Typography    */
-    --sys-font-size: var(--ref-font-size-small);
-    --sys-font-size-alt: var(--ref-font-size-alt);
+    /*    TYPOGRAPHY    */
+      --sys-font-display-size: var(--ref-font-display-size-large);
   }
 }

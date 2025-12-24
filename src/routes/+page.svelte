@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Planet from "$lib/components/Planet.svelte";
   import ref from "$lib/styles/ref.json"; 
+  import Title from "$lib/components/Title.svelte";
 
   const palette = ref.palette;
 </script>
 
+<Title title="RAY RAIVERN"/>
 <Planet radius="100px" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black"/>
 <Planet radius="100px" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black"/>
 

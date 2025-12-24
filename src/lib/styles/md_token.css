@@ -1,3 +1,4 @@
+/* This file contains the fallback values incase material color utility library fails to load. Also use this file as a reference for all the variables available from the material color utility algorithm. */
 .dark {
   --md-sys-color-primary: rgb(130 211 226);
   --md-sys-color-surface-tint: rgb(130 211 226);
