@@ -7,8 +7,8 @@
 </script>
 
 <Title title="RAY RAIVERN"/>
-<Planet radius="100px" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black"/>
-<Planet radius="100px" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black"/>
+<Planet radius="1.2" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black" rightAlign={false}/>
+<Planet radius="1" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black" rightAlign={true}/>
 
 <!-- <div class="b-planet"> -->
 <!-- 	<span>WORK</span> -->

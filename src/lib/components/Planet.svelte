@@ -5,7 +5,8 @@
 	export let colorDark: string;
 	export let colorNeutral: string;
 	export let colorLight: string;
-	export let radius: string;
+	export let radius: string; // It is the multiplier applied to the circle size. Keep range between 0.5 to 1.5
+  export let rightAlign: Boolean; // If the component will be rightAligned or not.
 	export let orbits: Orbit[] = [];
 
   let theme = getContext<{ color: string }>('theme');
@@ -17,7 +18,7 @@
 </script>
 
 <div
-	class="planet"
+	class="planet {rightAlign ? 'right' : 'left'}" 
 	style="
     --colorDark: {colorDark};
     --colorNeutral: {colorNeutral};
@@ -29,10 +30,15 @@
 </div>
 
 <style>
+  .right {
+    margin-left: auto;
+  }
   .planet {
-    height: var(--radius);
-    width: var(--radius);
+    height: calc( 90px * var(--radius));
+    width: calc( 90px * var(--radius));
     background-color: var(--md-sys-color-primary-container);
     border-radius: 100%;
+
+    margin-top: var(--sys-layout-padding-2);
   }
 </style>

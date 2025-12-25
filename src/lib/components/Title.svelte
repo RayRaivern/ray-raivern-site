@@ -10,7 +10,8 @@
     font-weight: normal;
     font-size: var(--sys-font-display-size);
     color: white;
-    padding-top: 64px;
+    padding-top: var(--sys-layout-padding-3);
+    padding-bottom: var(--sys-layout-padding-3);
 
     text-align: center;
     word-spacing: 100vw;

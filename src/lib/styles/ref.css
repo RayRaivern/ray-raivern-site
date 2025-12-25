@@ -7,7 +7,13 @@
     /* small */
       --ref-layout-margin-horizontal-small: 16px;
       --ref-layout-margin-top-small: 64px;
+
       --ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
+
+      /* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
+      --ref-layout-padding-1-small: 16px;
+      --ref-layout-padding-2-small: 32px;
+      --ref-layout-padding-3-small: 64px;
 
     /* medium */
       --ref-layout-margin-horizontal-medium: 24px; 

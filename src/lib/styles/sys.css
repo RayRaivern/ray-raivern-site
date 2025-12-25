@@ -3,9 +3,15 @@
     --sys-effect-blur: var(--ref-effect-blur);
 
   /*    LAYOUT    */  
+
     /* small */
-      --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
-      --sys-layout-margin-top: var(--ref-layout-margin-top-small);
+    --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
+    --sys-layout-margin-top: var(--ref-layout-margin-top-small);
+
+      /* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
+    --sys-layout-padding-1: var(--ref-layout-padding-1-small);
+    --sys-layout-padding-2: var(--ref-layout-padding-2-small);
+    --sys-layout-padding-3: var(--ref-layout-padding-3-small);
 
 
   /*    TYPOGRAPHY    */
