@@ -13,6 +13,20 @@
     --sys-layout-padding-2: var(--ref-layout-padding-2-small);
     --sys-layout-padding-3: var(--ref-layout-padding-3-small);
 
+      /* Size's 4th word ranges from the number 1 to 12. 12 signifies the biggest size, while 1 signifies the least size. */
+    --sys-layout-size-1: var(--ref-layout-size-1-small);
+    --sys-layout-size-2: var(--ref-layout-size-2-small);
+    --sys-layout-size-3: var(--ref-layout-size-3-small);
+    --sys-layout-size-4: var(--ref-layout-size-4-small);
+    --sys-layout-size-5: var(--ref-layout-size-5-small);
+    --sys-layout-size-6: var(--ref-layout-size-6-small);
+    --sys-layout-size-7: var(--ref-layout-size-7-small);
+    --sys-layout-size-8: var(--ref-layout-size-8-small);
+    --sys-layout-size-9: var(--ref-layout-size-9-small);
+    --sys-layout-size-10: var(--ref-layout-size-10-small);
+    --sys-layout-size-11: var(--ref-layout-size-11-small);
+    --sys-layout-size-12: var(--ref-layout-size-12-small);
+
 
   /*    TYPOGRAPHY    */
     --sys-font-alt-size: var(--ref-font-alt-size);

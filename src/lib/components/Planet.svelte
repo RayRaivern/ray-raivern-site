@@ -27,18 +27,37 @@
   "
   onmouseenter={updateTheme}
 >
+  <div class="orbit"></div>
 </div>
 
 <style>
+  .left {
+    margin-left: var(--sys-layout-padding-3);
+  }
   .right {
     margin-left: auto;
+    margin-right: var(--sys-layout-padding-3);
   }
   .planet {
-    height: calc( 90px * var(--radius));
-    width: calc( 90px * var(--radius));
-    background-color: var(--md-sys-color-primary-container);
+    position: relative;
+    height: calc( var(--sys-layout-size-12) * var(--radius));
+    width: calc( var(--sys-layout-size-12) * var(--radius));
+    background: radial-gradient(circle at top right, var(--colorLight), var(--colorNeutral), var(--colorDark));
     border-radius: 100%;
 
-    margin-top: var(--sys-layout-padding-2);
+    margin-top: var(--sys-layout-padding-3);
+    margin-bottom: var(--sys-layout-padding-3);
+  }
+
+  .orbit {
+    height: calc( var(--sys-layout-size-12) * var(--radius) + var(--sys-layout-size-8));
+    width: calc( var(--sys-layout-size-12) * var(--radius) + var(--sys-layout-size-8));
+    border: 0.2px solid gray;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>

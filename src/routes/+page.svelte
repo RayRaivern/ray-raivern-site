@@ -7,42 +7,14 @@
 </script>
 
 <Title title="RAY RAIVERN"/>
-<Planet radius="1.2" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black" rightAlign={false}/>
-<Planet radius="1" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black" rightAlign={true}/>
+<div class="planets">
+  <Planet radius="1" colorNeutral={palette['teal-neutral']} colorLight="white" colorDark="black" rightAlign={false}/>
+  <Planet radius="0.8" colorNeutral={palette['red-neutral']} colorLight="white" colorDark="black" rightAlign={true}/>
+</div>
 
-<!-- <div class="b-planet"> -->
-<!-- 	<span>WORK</span> -->
-<!-- </div> -->
-<!-- <div class="s-planet"></div> -->
-<!---->
-<!-- <style> -->
-<!-- 	span { -->
-<!-- 		display: inline-block; -->
-<!-- 		vertical-align: middle; -->
-<!-- 		line-height: normal; -->
-<!-- 	} -->
-<!---->
-<!-- 	.b-planet { -->
-<!-- 		width: 200px; -->
-<!-- 		height: 200px; -->
-<!-- 		border-radius: 50%; -->
-<!-- 		background: #b0c6ff; -->
-<!-- 		margin: 20px; -->
-<!---->
-<!-- 		color: rgba(255, 255, 255, 0.6); -->
-<!-- 		-webkit-text-stroke: 0.5px black; -->
-<!-- 		text-shadow: 2px 5px 2px #7c6ba7; -->
-<!-- 		font-size: 50px; -->
-<!-- 		line-height: 180px; -->
-<!-- 		text-align: center; -->
-<!---->
-<!-- 		box-shadow: 0 0 30px 15px rgba(176, 198, 255, 0.6); -->
-<!-- 	} -->
-<!---->
-<!-- 	.s-planet { -->
-<!-- 		width: 150px; -->
-<!-- 		height: 150px; -->
-<!-- 		border-radius: 50%; -->
-<!-- 		background: #ffb68c; -->
-<!-- 	} -->
-<!-- </style> -->
+<style>
+  .planets {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
