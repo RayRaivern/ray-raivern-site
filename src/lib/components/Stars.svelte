@@ -41,9 +41,15 @@
 
 				ctx.fillStyle = star.color;
 				ctx.globalAlpha = opacity;
+        ctx.shadowBlur = star.radius * 10; // Adjust multiplier for "glow" intensity
+        ctx.shadowColor = star.color;
+
 				ctx.beginPath();
 				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
 				ctx.fill();
+
+        // reset for next stars
+        ctx.shadowBlur = 0;
 			});
 
 			animationID = requestAnimationFrame(animate);
