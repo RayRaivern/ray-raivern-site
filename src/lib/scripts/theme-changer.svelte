@@ -11,6 +11,7 @@
   :global(*) {
     transition: background-color 1200ms ease-out,
                 border-color 1200ms linear,
-                color 1200ms ease-in;
+                color 1200ms ease-in,
+                filter 1200ms ease-out;
   }
 </style>
