@@ -6,11 +6,10 @@
 
 	import jupiter_img from '$lib/assets/jupiter.jpg';
 	import mars_img from '$lib/assets/mars.jpg';
-  import github_img from '$lib/assets/github.png';
-  import linkedin_img from '$lib/assets/linkedin.png';
 
 	const palette = ref.palette;
-  const work_orbits = [github_img, linkedin_img];
+  const work_orbits = ["\uf09b", "\uf08c"];
+  const hobby_orbits = ["\ue61a"];
 </script>
 
 <Title title="RAY RAIVERN" />
@@ -24,7 +23,7 @@
 		image={jupiter_img}
 	>
     {#each work_orbits as orbit, i }
-      <Orbit img_url={orbit} orbit_no={i + 1}/>
+      <Orbit icon_code={orbit} orbit_no={i + 1}/>
     {/each}
 	</Planet>
 	<Planet
@@ -35,8 +34,8 @@
 		rightAlign={true}
 		image={mars_img}
 	>
-		{#each work_orbits as orbit, i }
-      <Orbit img_url={orbit} orbit_no={i + 1}/>
+		{#each hobby_orbits as orbit, i }
+      <Orbit icon_code={orbit} orbit_no={i + 1}/>
     {/each}>
 	</Planet>
 </div>

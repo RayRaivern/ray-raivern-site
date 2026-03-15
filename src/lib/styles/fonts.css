@@ -25,3 +25,10 @@
   font-weight: bold;
   src: url(/fonts/oxanium/oxanium-v21-latin-700.woff2) format(woff2);
 }
+
+@font-face {
+  font-family: 'Icons';
+  font-style: normal;
+  font-weight: normal;
+  src: url(/fonts/font_awesome/fa-brands-400.woff2) format(woff2);
+}

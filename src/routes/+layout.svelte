@@ -31,5 +31,6 @@
     margin-left: var(--sys-layout-margin-horizontal);
     margin-right: var(--sys-layout-margin-horizontal);
     margin-top: var(--sys-layout-margin-top);
+    /* filter: blur(var(--sys-effect-blur)); */
   }
 </style>
