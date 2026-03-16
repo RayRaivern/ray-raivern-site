@@ -36,7 +36,7 @@
 	>
 		{#each hobby_orbits as orbit, i }
       <Orbit icon_code={orbit} orbit_no={i + 1}/>
-    {/each}>
+    {/each}
 	</Planet>
 </div>
 

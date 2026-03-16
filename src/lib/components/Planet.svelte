@@ -11,15 +11,38 @@
 		children
 	} = $props();
 
+  let hover = false;
+  let touch_duartion = 1000; // This is in ms. Refer to https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout for more information.
+  let touch_timer: ReturnType<typeof setTimeout>;
+
 	let theme = getContext<{ color: string }>('theme');
 
 	function updateTheme() {
 		console.log('Running theme updater.');
 		theme.color = colorNeutral;
 	}
+
+  function mouseEntry() {
+    updateTheme();
+    hover = true;
+    console.log("Mouse has entered");
+  }
+  function mouseLeave() {
+    hover = false;
+    console.log("Mouse has left.");
+  }
+
+  function touchStart() {
+    touch_timer = setTimeout(mouseEntry, touch_duartion);
+  }
+  function touchEnd() {
+    if(touch_timer){
+      clearTimeout(touch_timer);
+    }
+  }
 </script>
 
-<div
+<button
 	class="planet {rightAlign ? 'right' : 'left'}"
 	style="
     --colorDark: {colorDark};
@@ -27,7 +50,12 @@
     --colorLight: {colorLight};
     --radius: {radius};
   "
-	onmouseenter={updateTheme}
+	onmouseenter={mouseEntry}
+  onmouseleave={mouseLeave}
+  ontouchstart={touchStart}
+  ontouchend={touchEnd}
+
+  type="button"
 >
 	<div
 		class="img-overlay"
@@ -37,7 +65,7 @@
 	></div>
 
 	{@render children()}
-</div>
+</button>
 
 <style>
 	.left {
@@ -58,6 +86,8 @@
 			var(--colorDark)
 		);
 		border-radius: 50%;
+    border: none; /* In order to remove the default button border */
+    cursor: pointer;
 
 		margin-top: var(--sys-layout-padding-3);
 		margin-bottom: var(--sys-layout-padding-3);
