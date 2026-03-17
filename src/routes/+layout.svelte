@@ -12,6 +12,8 @@
   const palette = ref.palette;
   let theme = $state({ color: palette['teal-neutral'] });
   setContext('theme', theme);
+  let touch_signal = $state({ signal: false });
+  setContext('touch_signal', touch_signal);
 
 	let { children } = $props();
 </script>

@@ -1,44 +1,64 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
+	import { scale } from 'svelte/transition';
 
 	let {
 		colorDark,
 		colorNeutral,
 		colorLight,
-		radius, // It is the multiplier applied to the circle size. Keep range between 0.5 to 1.5
-		rightAlign, // If the component will be rightAligned or not.
+		radius, // Multiplier applied to the circle size. Keep range between 0.5 to 1.5
+		rightAlign, // If the component is rightAligned or not.
 		image,
 		children
 	} = $props();
 
-  let hover = false;
-  let touch_duartion = 1000; // This is in ms. Refer to https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout for more information.
-  let touch_timer: ReturnType<typeof setTimeout>;
+	let hover = $state(false);
+  let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
+  let touch_signal = $state(getContext<{ signal: Boolean }>('touch_signal'));
+  let touch_buffer = false;
+
+  $effect(() => {
+    if(touch_signal.signal || !touch_signal.signal){
+      hover = false;
+
+      if(touch_buffer){
+        mouseEntry();
+        touch_buffer = false;
+      }
+    }
+    })
 
 	function updateTheme() {
 		console.log('Running theme updater.');
 		theme.color = colorNeutral;
 	}
 
-  function mouseEntry() {
-    updateTheme();
-    hover = true;
-    console.log("Mouse has entered");
-  }
-  function mouseLeave() {
-    hover = false;
-    console.log("Mouse has left.");
-  }
+	function mouseEntry() {
+		updateTheme();
+		hover = true;
+		console.log('Mouse has entered');
+	}
+	function mouseLeave() {
+		hover = false;
+		console.log('Mouse has left.');
+	}
 
-  function touchStart() {
-    touch_timer = setTimeout(mouseEntry, touch_duartion);
-  }
-  function touchEnd() {
-    if(touch_timer){
-      clearTimeout(touch_timer);
+	function touchEnd() {
+    if(hover && !touch_move){
+      touch_signal.signal = !touch_signal.signal;
     }
+    else if (!touch_move){
+      touch_buffer = true;
+      touch_signal.signal = !touch_signal.signal;
+    }
+
+    touch_move = false;
+	}
+
+  function touchMove() {
+    touch_move = true;
   }
 </script>
 
@@ -51,11 +71,10 @@
     --radius: {radius};
   "
 	onmouseenter={mouseEntry}
-  onmouseleave={mouseLeave}
-  ontouchstart={touchStart}
-  ontouchend={touchEnd}
-
-  type="button"
+	onmouseleave={mouseLeave}
+	ontouchend={touchEnd}
+  ontouchmove={touchMove}
+	type="button"
 >
 	<div
 		class="img-overlay"
@@ -65,6 +84,10 @@
 	></div>
 
 	{@render children()}
+
+	{#if hover}
+		<div class="hover" transition:scale></div>
+	{/if}
 </button>
 
 <style>
@@ -86,8 +109,8 @@
 			var(--colorDark)
 		);
 		border-radius: 50%;
-    border: none; /* In order to remove the default button border */
-    cursor: pointer;
+		border: none; /* In order to remove the default button border */
+		cursor: pointer;
 
 		margin-top: var(--sys-layout-padding-3);
 		margin-bottom: var(--sys-layout-padding-3);
@@ -110,5 +133,66 @@
 		opacity: 0.7;
 		border-radius: 50%;
 		pointer-events: none;
+	}
+
+	/* .hover { */
+	/* 	position: inherit; */
+	/* 	top: 50%; */
+	/* 	left: 50%; */
+	/* 	width: 120%; */
+	/* 	height: 110%; */
+	/* 	background: none; */
+	/* 	transform: translate(-50%, -50%); */
+	/**/
+	/* 	border: 2px; */
+	/* 	border-color: gray; */
+	/* 	border-style: dashed; */
+	/* } */
+
+	.hover {
+		position: inherit;
+		width: 125%;
+		height: 120%;
+		background: none;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		background-image:
+			linear-gradient(90deg, gray 50%, transparent 50%),
+			linear-gradient(90deg, gray 50%, transparent 50%),
+			linear-gradient(0deg, gray 50%, transparent 50%),
+			linear-gradient(0deg, gray 50%, transparent 50%);
+
+		background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+		background-size:
+			15px 2px,
+			15px 2px,
+			2px 15px,
+			2px 15px;
+		background-position:
+			0 0,
+			0 100%,
+			0 0,
+			100% 0;
+
+		animation: marching-ants 1s infinite linear;
+	}
+
+	@keyframes marching-ants {
+		0% {
+			background-position:
+				0 0,
+				15px 100%,
+				0 15px,
+				100% 0;
+		}
+		100% {
+			background-position:
+				15px 0,
+				0 100%,
+				0 0,
+				100% 15px;
+		}
 	}
 </style>
