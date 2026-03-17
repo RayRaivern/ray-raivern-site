@@ -9,6 +9,7 @@
 		radius, // Multiplier applied to the circle size. Keep range between 0.5 to 1.5
 		rightAlign, // If the component is rightAligned or not.
 		image,
+    rotation,
 		children
 	} = $props();
 
@@ -69,6 +70,7 @@
     --colorNeutral: {colorNeutral};
     --colorLight: {colorLight};
     --radius: {radius};
+    --rotation: {rotation};
   "
 	onmouseenter={mouseEntry}
 	onmouseleave={mouseLeave}
@@ -125,15 +127,26 @@
 
 		background-image: var(--bg_image);
 		background-size: cover;
-		background-position: center;
-		transform: rotate(-10deg) scale(1.2);
+    background-repeat: repeat-x;
+    transform: rotate(-10deg) scale(1.2);
 
 		filter: grayscale(100%);
 		mix-blend-mode: multiply;
 		opacity: 0.7;
 		border-radius: 50%;
 		pointer-events: none;
+
+    animation: planet-rotation calc(2s * var(--rotation)) linear infinite;
 	}
+
+  @keyframes planet-rotation {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 200% 0;
+    }
+  }
 
 	/* .hover { */
 	/* 	position: inherit; */

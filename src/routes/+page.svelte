@@ -21,6 +21,7 @@
 		colorDark="black"
 		rightAlign={false}
 		image={jupiter_img}
+    rotation="20"
 	>
     {#each work_orbits as orbit, i }
       <Orbit icon_code={orbit} orbit_no={i + 1}/>
@@ -33,6 +34,7 @@
 		colorDark="black"
 		rightAlign={true}
 		image={mars_img}
+    rotation="30"
 	>
 		{#each hobby_orbits as orbit, i }
       <Orbit icon_code={orbit} orbit_no={i + 1}/>
