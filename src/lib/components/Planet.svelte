@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import { scale } from 'svelte/transition';
+	import { scale, draw } from 'svelte/transition';
 
 	let {
 		colorDark,
@@ -88,7 +88,21 @@
 	{@render children()}
 
 	{#if hover}
-		<div class="hover" transition:scale></div>
+		<div class="hover" in:scale out:scale={{ delay: 1200 }}></div>
+    <div class="slant-lines-{rightAlign ? 'right' : 'left'}">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="0" x2="35" y2="25" 
+          stroke="gray" 
+          stroke-width="2"
+          in:draw 
+          out:draw={{ delay: 600 }}/>
+        <line x1="35" y1="25" x2="60" y2="25" 
+          stroke="gray" 
+          stroke-width="2"
+          in:draw={{ delay: 600 }} 
+          out:draw/>
+      </svg>
+    </div>
 	{/if}
 </button>
 
@@ -148,19 +162,19 @@
     }
   }
 
-	/* .hover { */
-	/* 	position: inherit; */
-	/* 	top: 50%; */
-	/* 	left: 50%; */
-	/* 	width: 120%; */
-	/* 	height: 110%; */
-	/* 	background: none; */
-	/* 	transform: translate(-50%, -50%); */
-	/**/
-	/* 	border: 2px; */
-	/* 	border-color: gray; */
-	/* 	border-style: dashed; */
-	/* } */
+  .slant-lines-left {
+    position: inherit;
+    top: -10%;
+    left: 75%;
+  }
+
+  .slant-lines-right {
+    position: inherit;
+    top: -10%;
+    right: 75%;
+
+    scale: -1 1;
+  }
 
 	.hover {
 		position: inherit;
