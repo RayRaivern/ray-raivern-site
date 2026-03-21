@@ -1,6 +1,6 @@
 :root {
   /*    EFFECT    */  
-    --ref-effect-blur: 0.8px;
+    --ref-effect-blur: 0.5px;
 
   /*    LAYOUT    */
 
@@ -40,6 +40,7 @@
   /*    TYPOGRAPHY    */
     --ref-font-alt-size: 0.8em;
     --ref-font-display-family: 'Orbitron';
+    --ref-font-label-family: 'Oxanium';
 
     /* small */
       --ref-font-display-size-small: 36px;

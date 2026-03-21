@@ -15,26 +15,28 @@
 <Title title="RAY RAIVERN" />
 <div class="planets">
 	<Planet
-		radius="1"
+		radius={1}
 		colorNeutral={palette['teal-neutral']}
 		colorLight="white"
 		colorDark="black"
 		rightAlign={false}
 		image={jupiter_img}
-    rotation="20"
+    rotation={20}
+    text="PROJECTS"
 	>
     {#each work_orbits as orbit, i }
       <Orbit icon_code={orbit} orbit_no={i + 1}/>
     {/each}
 	</Planet>
 	<Planet
-		radius="0.8"
+		radius={0.8}
 		colorNeutral={palette['red-neutral']}
 		colorLight="white"
 		colorDark="black"
 		rightAlign={true}
 		image={mars_img}
-    rotation="30"
+    rotation={30}
+    text="HOBBIES"
 	>
 		{#each hobby_orbits as orbit, i }
       <Orbit icon_code={orbit} orbit_no={i + 1}/>

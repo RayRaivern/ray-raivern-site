@@ -1,35 +1,55 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
 	import { getContext } from 'svelte';
 	import { scale, draw } from 'svelte/transition';
+	import { typewriter } from '$lib/scripts/Typewriter';
+
+	interface Props {
+		colorDark: string;
+		colorNeutral: string;
+		colorLight: string;
+		/** Multiplier applied to the circle size. Range: 0.5 to 1.5 */
+		radius: number;
+		/** Determines if the component is right-aligned */
+		rightAlign: boolean;
+		image: string;
+    /** Planet rotation speed (Not Orbit rotation) */
+		rotation: number;
+    /** Text to be displayed on hover */
+		text: string;
+		/** Children should only be Orbit components */
+		children: Snippet;
+	}
 
 	let {
 		colorDark,
 		colorNeutral,
 		colorLight,
-		radius, // Multiplier applied to the circle size. Keep range between 0.5 to 1.5
-		rightAlign, // If the component is rightAligned or not.
+		radius,
+		rightAlign,
 		image,
-    rotation,
+		rotation,
+		text,
 		children
-	} = $props();
+	}: Props = $props();
 
 	let hover = $state(false);
-  let touch_move = false;
+	let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
-  let touch_signal = $state(getContext<{ signal: Boolean }>('touch_signal'));
-  let touch_buffer = false;
+	let touch_signal = $state(getContext<{ signal: Boolean }>('touch_signal'));
+	let touch_buffer = false;
 
-  $effect(() => {
-    if(touch_signal.signal || !touch_signal.signal){
-      hover = false;
+	$effect(() => {
+		if (touch_signal.signal || !touch_signal.signal) {
+			hover = false;
 
-      if(touch_buffer){
-        mouseEntry();
-        touch_buffer = false;
-      }
-    }
-    })
+			if (touch_buffer) {
+				mouseEntry();
+				touch_buffer = false;
+			}
+		}
+	});
 
 	function updateTheme() {
 		console.log('Running theme updater.');
@@ -47,20 +67,19 @@
 	}
 
 	function touchEnd() {
-    if(hover && !touch_move){
-      touch_signal.signal = !touch_signal.signal;
-    }
-    else if (!touch_move){
-      touch_buffer = true;
-      touch_signal.signal = !touch_signal.signal;
-    }
+		if (hover && !touch_move) {
+			touch_signal.signal = !touch_signal.signal;
+		} else if (!touch_move) {
+			touch_buffer = true;
+			touch_signal.signal = !touch_signal.signal;
+		}
 
-    touch_move = false;
+		touch_move = false;
 	}
 
-  function touchMove() {
-    touch_move = true;
-  }
+	function touchMove() {
+		touch_move = true;
+	}
 </script>
 
 <button
@@ -75,7 +94,7 @@
 	onmouseenter={mouseEntry}
 	onmouseleave={mouseLeave}
 	ontouchend={touchEnd}
-  ontouchmove={touchMove}
+	ontouchmove={touchMove}
 	type="button"
 >
 	<div
@@ -89,20 +108,31 @@
 
 	{#if hover}
 		<div class="hover" in:scale out:scale={{ delay: 1200 }}></div>
-    <div class="slant-lines-{rightAlign ? 'right' : 'left'}">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <line x1="10" y1="0" x2="35" y2="25" 
-          stroke="gray" 
-          stroke-width="2"
-          in:draw 
-          out:draw={{ delay: 600 }}/>
-        <line x1="35" y1="25" x2="60" y2="25" 
-          stroke="gray" 
-          stroke-width="2"
-          in:draw={{ delay: 600 }} 
-          out:draw/>
-      </svg>
-    </div>
+		<div class="slant-lines-{rightAlign ? 'right' : 'left'}">
+			<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+				<line
+					x1="10"
+					y1="0"
+					x2="35"
+					y2="25"
+					stroke="gray"
+					stroke-width="2"
+					in:draw
+					out:draw={{ delay: 600 }}
+				/>
+				<line
+					x1="35"
+					y1="25"
+					x2="60"
+					y2="25"
+					stroke="gray"
+					stroke-width="2"
+					in:draw={{ delay: 600 }}
+					out:draw
+				/>
+			</svg>
+		</div>
+    <div class="typewrite typewrite-{rightAlign ? 'right' : 'left'}" in:typewriter={{ delay: 1000 }} out:typewriter>{text}</div>
 	{/if}
 </button>
 
@@ -141,8 +171,8 @@
 
 		background-image: var(--bg_image);
 		background-size: cover;
-    background-repeat: repeat-x;
-    transform: rotate(-10deg) scale(1.2);
+		background-repeat: repeat-x;
+		transform: rotate(-10deg) scale(1.2);
 
 		filter: grayscale(100%);
 		mix-blend-mode: multiply;
@@ -150,31 +180,31 @@
 		border-radius: 50%;
 		pointer-events: none;
 
-    animation: planet-rotation calc(2s * var(--rotation)) linear infinite;
+		animation: planet-rotation calc(2s * var(--rotation)) linear infinite;
 	}
 
-  @keyframes planet-rotation {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 200% 0;
-    }
-  }
+	@keyframes planet-rotation {
+		from {
+			background-position: 0 0;
+		}
+		to {
+			background-position: 200% 0;
+		}
+	}
 
-  .slant-lines-left {
-    position: inherit;
-    top: -10%;
-    left: 75%;
-  }
+	.slant-lines-left {
+		position: inherit;
+		top: -10%;
+		left: 75%;
+	}
 
-  .slant-lines-right {
-    position: inherit;
-    top: -10%;
-    right: 75%;
+	.slant-lines-right {
+		position: inherit;
+		top: -10%;
+		right: 75%;
 
-    scale: -1 1;
-  }
+		scale: -1 1;
+	}
 
 	.hover {
 		position: inherit;
@@ -222,4 +252,27 @@
 				100% 15px;
 		}
 	}
+
+  .typewrite {
+    font-family: var(--sys-font-label-family);
+    font-weight: normal;
+    /* font-size: var(--sys-font-display-size); */
+    color: silver;
+
+    letter-spacing: 10%;
+
+    position: inherit;
+    height: auto;
+    width: 100%;
+  }
+
+  .typewrite-left {
+    text-align: left;
+    transform: translate(140%, -540%);
+  }
+
+  .typewrite-right {
+    text-align: right;
+    transform: translate(-140%, -450%);
+  }
 </style>
