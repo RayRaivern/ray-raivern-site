@@ -8,8 +8,8 @@
 	import mars_img from '$lib/assets/mars.jpg';
 
 	const palette = ref.palette;
-  const work_orbits = ["\uf09b", "\uf08c"];
-  const hobby_orbits = ["\ue61a"];
+	const work_orbits = ['\uf09b', '\uf08c'];
+	const hobby_orbits = ['\ue61a'];
 </script>
 
 <Title title="RAY RAIVERN" />
@@ -21,12 +21,12 @@
 		colorDark="black"
 		rightAlign={false}
 		image={jupiter_img}
-    rotation={20}
-    text="PROJECTS"
+		rotation={20}
+		text="PROJECTS"
 	>
-    {#each work_orbits as orbit, i }
-      <Orbit icon_code={orbit} orbit_no={i + 1}/>
-    {/each}
+		{#each work_orbits as orbit, i}
+			<Orbit icon_code={orbit} orbit_no={i + 1} />
+		{/each}
 	</Planet>
 	<Planet
 		radius={0.8}
@@ -35,12 +35,12 @@
 		colorDark="black"
 		rightAlign={true}
 		image={mars_img}
-    rotation={30}
-    text="HOBBIES"
+		rotation={30}
+		text="HOBBIES"
 	>
-		{#each hobby_orbits as orbit, i }
-      <Orbit icon_code={orbit} orbit_no={i + 1}/>
-    {/each}
+		{#each hobby_orbits as orbit, i}
+			<Orbit icon_code={orbit} orbit_no={i + 1} />
+		{/each}
 	</Planet>
 </div>
 

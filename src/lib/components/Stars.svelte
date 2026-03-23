@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { starGenerator } from '$lib';
-  import { browser } from '$app/environment';
+	import { browser } from '$app/environment';
 
 	let canvas: HTMLCanvasElement;
 	let width = $state(0);
@@ -11,22 +11,22 @@
 		height = window.innerHeight;
 	}
 
-  $effect(() => {
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
+	$effect(() => {
+		updateDimensions();
+		window.addEventListener('resize', updateDimensions);
 
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-    }
-  })
+		return () => {
+			window.removeEventListener('resize', updateDimensions);
+		};
+	});
 
-  $effect(() => {
-    if(!browser) return;
+	$effect(() => {
+		if (!browser) return;
 		const ctx = canvas.getContext('2d');
 
-    let starCount = window.innerWidth * 0.15;
+		let starCount = window.innerWidth * 0.15;
 		const stars = starGenerator(starCount, 1, width, height);
-    let animationID: number;
+		let animationID: number;
 
 		function animate(time: number) {
 			if (!ctx) throw new Error('Failed to get 2d context for canvas.');
@@ -41,15 +41,15 @@
 
 				ctx.fillStyle = star.color;
 				ctx.globalAlpha = opacity;
-        ctx.shadowBlur = star.radius * 10; // Adjust multiplier for "glow" intensity
-        ctx.shadowColor = star.color;
+				ctx.shadowBlur = star.radius * 10; // Adjust multiplier for "glow" intensity
+				ctx.shadowColor = star.color;
 
 				ctx.beginPath();
 				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
 				ctx.fill();
 
-        // reset for next stars
-        ctx.shadowBlur = 0;
+				// reset for next stars
+				ctx.shadowBlur = 0;
 			});
 
 			animationID = requestAnimationFrame(animate);
@@ -57,9 +57,9 @@
 
 		animationID = requestAnimationFrame(animate);
 
-    return () => {
-      cancelAnimationFrame(animationID);
-    }
+		return () => {
+			cancelAnimationFrame(animationID);
+		};
 	});
 </script>
 

@@ -1,48 +1,47 @@
 :root {
-  /*    EFFECT    */  
-    --sys-effect-blur: var(--ref-effect-blur);
+	/*    EFFECT    */
+	--sys-effect-blur: var(--ref-effect-blur);
 
-  /*    LAYOUT    */  
+	/*    LAYOUT    */
 
-    /* small */
-    --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
-    --sys-layout-margin-top: var(--ref-layout-margin-top-small);
+	/* small */
+	--sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
+	--sys-layout-margin-top: var(--ref-layout-margin-top-small);
 
-      /* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
-    --sys-layout-padding-1: var(--ref-layout-padding-1-small);
-    --sys-layout-padding-2: var(--ref-layout-padding-2-small);
-    --sys-layout-padding-3: var(--ref-layout-padding-3-small);
+	/* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
+	--sys-layout-padding-1: var(--ref-layout-padding-1-small);
+	--sys-layout-padding-2: var(--ref-layout-padding-2-small);
+	--sys-layout-padding-3: var(--ref-layout-padding-3-small);
 
-      /* Size's 4th word ranges from the number 1 to 12. 12 signifies the biggest size, while 1 signifies the least size. */
-    --sys-layout-size-1: var(--ref-layout-size-1-small);
-    --sys-layout-size-2: var(--ref-layout-size-2-small);
-    --sys-layout-size-3: var(--ref-layout-size-3-small);
-    --sys-layout-size-4: var(--ref-layout-size-4-small);
-    --sys-layout-size-5: var(--ref-layout-size-5-small);
-    --sys-layout-size-6: var(--ref-layout-size-6-small);
-    --sys-layout-size-7: var(--ref-layout-size-7-small);
-    --sys-layout-size-8: var(--ref-layout-size-8-small);
-    --sys-layout-size-9: var(--ref-layout-size-9-small);
-    --sys-layout-size-10: var(--ref-layout-size-10-small);
-    --sys-layout-size-11: var(--ref-layout-size-11-small);
-    --sys-layout-size-12: var(--ref-layout-size-12-small);
+	/* Size's 4th word ranges from the number 1 to 12. 12 signifies the biggest size, while 1 signifies the least size. */
+	--sys-layout-size-1: var(--ref-layout-size-1-small);
+	--sys-layout-size-2: var(--ref-layout-size-2-small);
+	--sys-layout-size-3: var(--ref-layout-size-3-small);
+	--sys-layout-size-4: var(--ref-layout-size-4-small);
+	--sys-layout-size-5: var(--ref-layout-size-5-small);
+	--sys-layout-size-6: var(--ref-layout-size-6-small);
+	--sys-layout-size-7: var(--ref-layout-size-7-small);
+	--sys-layout-size-8: var(--ref-layout-size-8-small);
+	--sys-layout-size-9: var(--ref-layout-size-9-small);
+	--sys-layout-size-10: var(--ref-layout-size-10-small);
+	--sys-layout-size-11: var(--ref-layout-size-11-small);
+	--sys-layout-size-12: var(--ref-layout-size-12-small);
 
+	/*    TYPOGRAPHY    */
+	--sys-font-alt-size: var(--ref-font-alt-size);
+	--sys-font-display-family: var(--ref-font-display-family);
 
-  /*    TYPOGRAPHY    */
-    --sys-font-alt-size: var(--ref-font-alt-size);
-    --sys-font-display-family: var(--ref-font-display-family);
-
-    /* small */
-    --sys-font-display-size: var(--ref-font-display-size-small);
+	/* small */
+	--sys-font-display-size: var(--ref-font-display-size-small);
 }
 
-@media (min-width: 1200px) { /* large */
-  :root {
-    /*    LAYOUT    */  
-      --sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
+@media (min-width: 1200px) {
+	/* large */
+	:root {
+		/*    LAYOUT    */
+		--sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
 
-
-    /*    TYPOGRAPHY    */
-      --sys-font-display-size: var(--ref-font-display-size-large);
-  }
+		/*    TYPOGRAPHY    */
+		--sys-font-display-size: var(--ref-font-display-size-large);
+	}
 }

@@ -38,7 +38,7 @@
 	{#if browser}
 		<div class="spinner">
 			<!-- <img src={img_url} alt="" class="image" /> -->
-      <div class="icon">{icon_code}</div>
+			<div class="icon">{icon_code}</div>
 		</div>
 	{/if}
 </div>
@@ -59,17 +59,17 @@
 		pointer-events: none;
 	}
 
-  .icon {
-    font-family: "Icons";
-    font-weight: normal;
-    font-size: var(--sys-layout-size-5);
-    color: var(--md-sys-color-secondary);
+	.icon {
+		font-family: 'Icons';
+		font-weight: normal;
+		font-size: var(--sys-layout-size-5);
+		color: var(--md-sys-color-secondary);
 
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translate(-50%, -50%);
-  }
+	}
 
 	.spinner {
 		position: absolute;

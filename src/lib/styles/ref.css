@@ -1,51 +1,50 @@
 :root {
-  /*    EFFECT    */  
-    --ref-effect-blur: 0.5px;
+	/*    EFFECT    */
+	--ref-effect-blur: 0.5px;
 
-  /*    LAYOUT    */
+	/*    LAYOUT    */
 
-    /* small */
-      --ref-layout-margin-horizontal-small: 16px;
-      --ref-layout-margin-top-small: 64px;
+	/* small */
+	--ref-layout-margin-horizontal-small: 16px;
+	--ref-layout-margin-top-small: 64px;
 
-      --ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
+	--ref-layout-body-width-small: 100%; /* Only temporary value, definitely change later. */
 
-      /* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
-      --ref-layout-padding-1-small: 16px;
-      --ref-layout-padding-2-small: 32px;
-      --ref-layout-padding-3-small: 64px;
+	/* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
+	--ref-layout-padding-1-small: 16px;
+	--ref-layout-padding-2-small: 32px;
+	--ref-layout-padding-3-small: 64px;
 
-      /* size's 4th word ranges from the number 1 to 5. 5 signifies the largest size, while 1 signifies the least size. */
-      /* Base on 4px/8px increments for consistency */
-      --ref-layout-size-1-small: 4px;   
-      --ref-layout-size-2-small: 8px;   
-      --ref-layout-size-3-small: 12px;  
-      --ref-layout-size-4-small: 16px;  
-      --ref-layout-size-5-small: 24px;  
-      --ref-layout-size-6-small: 32px;  
-      --ref-layout-size-7-small: 40px;  
-      --ref-layout-size-8-small: 48px;  
-      --ref-layout-size-9-small: 56px;  
-      --ref-layout-size-10-small: 64px; 
-      --ref-layout-size-11-small: 80px; 
-      --ref-layout-size-12-small: 96px; 
+	/* size's 4th word ranges from the number 1 to 5. 5 signifies the largest size, while 1 signifies the least size. */
+	/* Base on 4px/8px increments for consistency */
+	--ref-layout-size-1-small: 4px;
+	--ref-layout-size-2-small: 8px;
+	--ref-layout-size-3-small: 12px;
+	--ref-layout-size-4-small: 16px;
+	--ref-layout-size-5-small: 24px;
+	--ref-layout-size-6-small: 32px;
+	--ref-layout-size-7-small: 40px;
+	--ref-layout-size-8-small: 48px;
+	--ref-layout-size-9-small: 56px;
+	--ref-layout-size-10-small: 64px;
+	--ref-layout-size-11-small: 80px;
+	--ref-layout-size-12-small: 96px;
 
-    /* medium */
-      --ref-layout-margin-horizontal-medium: 24px; 
+	/* medium */
+	--ref-layout-margin-horizontal-medium: 24px;
 
-    /* large */
-      --ref-layout-margin-horizontal-large: 24px;
+	/* large */
+	--ref-layout-margin-horizontal-large: 24px;
 
+	/*    TYPOGRAPHY    */
+	--ref-font-alt-size: 0.8em;
+	--ref-font-display-family: 'Orbitron';
+	--ref-font-label-family: 'Oxanium';
 
-  /*    TYPOGRAPHY    */
-    --ref-font-alt-size: 0.8em;
-    --ref-font-display-family: 'Orbitron';
-    --ref-font-label-family: 'Oxanium';
+	/* small */
+	--ref-font-display-size-small: 36px;
+	--ref-font-body-size-small: 1rem;
 
-    /* small */
-      --ref-font-display-size-small: 36px;
-      --ref-font-body-size-small: 1rem;
-
-    /* medium */
-      --ref-font-display-size-medium: ;
+	/* medium */
+	--ref-font-display-size-medium: ;
 }
