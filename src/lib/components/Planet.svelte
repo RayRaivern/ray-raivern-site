@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte';
 	import { getContext } from 'svelte';
 	import { scale, draw } from 'svelte/transition';
 	import { typewriter } from '$lib/scripts/Typewriter';
@@ -13,9 +13,9 @@
 		/** Determines if the component is right-aligned */
 		rightAlign: boolean;
 		image: string;
-    /** Planet rotation speed (Not Orbit rotation) */
+		/** Planet rotation speed (Not Orbit rotation) */
 		rotation: number;
-    /** Text to be displayed on hover */
+		/** Text to be displayed on hover */
 		text: string;
 		/** Children should only be Orbit components */
 		children: Snippet;
@@ -39,10 +39,16 @@
 	let theme = getContext<{ color: string }>('theme');
 	let touch_signal = $state(getContext<{ signal: Boolean }>('touch_signal'));
 	let touch_buffer = false;
+	let hover_actual = false;
+	let anim_delay_off = false;
+	let anim_delay_on = false;
 
 	$effect(() => {
 		if (touch_signal.signal || !touch_signal.signal) {
-			hover = false;
+			// console.log("Running touch signal effect.")
+			if (hover_actual) {
+				mouseLeave();
+			}
 
 			if (touch_buffer) {
 				mouseEntry();
@@ -57,13 +63,43 @@
 	}
 
 	function mouseEntry() {
+		if (anim_delay_on) {
+			hover_actual = true;
+			return;
+		}
+
 		updateTheme();
 		hover = true;
+		hover_actual = true;
+		anim_delay_off = true;
 		console.log('Mouse has entered');
+
+		setTimeout(() => {
+			anim_delay_off = false;
+
+			if (!hover_actual) {
+				mouseLeave();
+			}
+		}, 1800);
 	}
 	function mouseLeave() {
+		if (anim_delay_off) {
+			hover_actual = false;
+			return;
+		}
+
 		hover = false;
+		hover_actual = false;
+		anim_delay_on = true;
 		console.log('Mouse has left.');
+
+		setTimeout(() => {
+			anim_delay_on = false;
+
+			if (hover_actual) {
+				mouseEntry();
+			}
+		}, 1800);
 	}
 
 	function touchEnd() {
@@ -132,7 +168,13 @@
 				/>
 			</svg>
 		</div>
-    <div class="typewrite typewrite-{rightAlign ? 'right' : 'left'}" in:typewriter={{ delay: 1000 }} out:typewriter>{text}</div>
+		<div
+			class="typewrite typewrite-{rightAlign ? 'right' : 'left'}"
+			in:typewriter={{ delay: 1000 }}
+			out:typewriter
+		>
+			{text}
+		</div>
 	{/if}
 </button>
 
@@ -253,26 +295,26 @@
 		}
 	}
 
-  .typewrite {
-    font-family: var(--sys-font-label-family);
-    font-weight: normal;
-    /* font-size: var(--sys-font-display-size); */
-    color: silver;
+	.typewrite {
+		font-family: var(--sys-font-label-family);
+		font-weight: normal;
+		/* font-size: var(--sys-font-display-size); */
+		color: silver;
 
-    letter-spacing: 10%;
+		letter-spacing: 10%;
 
-    position: inherit;
-    height: auto;
-    width: 100%;
-  }
+		position: inherit;
+		height: auto;
+		width: 100%;
+	}
 
-  .typewrite-left {
-    text-align: left;
-    transform: translate(140%, -540%);
-  }
+	.typewrite-left {
+		text-align: left;
+		transform: translate(140%, -540%);
+	}
 
-  .typewrite-right {
-    text-align: right;
-    transform: translate(-140%, -450%);
-  }
+	.typewrite-right {
+		text-align: right;
+		transform: translate(-140%, -450%);
+	}
 </style>
