@@ -298,23 +298,26 @@
 	.typewrite {
 		font-family: var(--sys-font-label-family);
 		font-weight: normal;
-		/* font-size: var(--sys-font-display-size); */
+		font-size: 13px;
 		color: silver;
 
 		letter-spacing: 10%;
+    line-height: 16px;
 
 		position: inherit;
-		height: auto;
-		width: 100%;
+		height: 50%;
+    /* Width is separated by alignment because right aligned needs more width for the text to have enough space not to shift towards the right. And putting too much width in left aligned will trigger a horizontal scroll. */
 	}
 
 	.typewrite-left {
+		width: 100%;
 		text-align: left;
-		transform: translate(140%, -540%);
+		transform: translate(140%, -182%);
 	}
 
 	.typewrite-right {
+		width: 200%;
 		text-align: right;
-		transform: translate(-140%, -450%);
+		transform: translate(-120%, -185%);
 	}
 </style>

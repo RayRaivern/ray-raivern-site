@@ -37,8 +37,7 @@
 
 	{#if browser}
 		<div class="spinner">
-			<!-- <img src={img_url} alt="" class="image" /> -->
-			<div class="icon">{icon_code}</div>
+			<button class="icon" > {icon_code}</button>
 		</div>
 	{/if}
 </div>
@@ -64,6 +63,10 @@
 		font-weight: normal;
 		font-size: var(--sys-layout-size-5);
 		color: var(--md-sys-color-secondary);
+
+    /* For removing default button CSS */
+		border: none; 
+    background: none;
 
 		position: absolute;
 		top: 0;
