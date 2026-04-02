@@ -30,11 +30,15 @@
 	--ref-layout-size-11-small: 80px;
 	--ref-layout-size-12-small: 96px;
 
+  --ref-layout-size-multiplier-small: 1;
+
 	/* medium */
 	--ref-layout-margin-horizontal-medium: 24px;
+  --ref-layout-size-multiplier-medium: 1.15;
 
 	/* large */
-	--ref-layout-margin-horizontal-large: 24px;
+	--ref-layout-margin-horizontal-large: 64px;
+  --ref-layout-size-multiplier-large: 1.5;
 
 	/*    TYPOGRAPHY    */
 	--ref-font-alt-size: 0.8em;

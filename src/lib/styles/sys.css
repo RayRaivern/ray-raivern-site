@@ -14,18 +14,20 @@
 	--sys-layout-padding-3: var(--ref-layout-padding-3-small);
 
 	/* Size's 4th word ranges from the number 1 to 12. 12 signifies the biggest size, while 1 signifies the least size. */
-	--sys-layout-size-1: var(--ref-layout-size-1-small);
-	--sys-layout-size-2: var(--ref-layout-size-2-small);
-	--sys-layout-size-3: var(--ref-layout-size-3-small);
-	--sys-layout-size-4: var(--ref-layout-size-4-small);
-	--sys-layout-size-5: var(--ref-layout-size-5-small);
-	--sys-layout-size-6: var(--ref-layout-size-6-small);
-	--sys-layout-size-7: var(--ref-layout-size-7-small);
-	--sys-layout-size-8: var(--ref-layout-size-8-small);
-	--sys-layout-size-9: var(--ref-layout-size-9-small);
-	--sys-layout-size-10: var(--ref-layout-size-10-small);
-	--sys-layout-size-11: var(--ref-layout-size-11-small);
-	--sys-layout-size-12: var(--ref-layout-size-12-small);
+  --sys-layout-size-multiplier: var(--ref-layout-size-multiplier-small);
+
+	--sys-layout-size-1: calc(var(--ref-layout-size-1-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-2: calc(var(--ref-layout-size-2-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-3: calc(var(--ref-layout-size-3-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-4: calc(var(--ref-layout-size-4-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-5: calc(var(--ref-layout-size-5-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-6: calc(var(--ref-layout-size-6-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-7: calc(var(--ref-layout-size-7-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-8: calc(var(--ref-layout-size-8-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-9: calc(var(--ref-layout-size-9-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-10: calc(var(--ref-layout-size-10-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-11: calc(var(--ref-layout-size-11-small) * var(--sys-layout-size-multiplier));
+	--sys-layout-size-12: calc(var(--ref-layout-size-12-small) * var(--sys-layout-size-multiplier));
 
 	/*    TYPOGRAPHY    */
 	--sys-font-alt-size: var(--ref-font-alt-size);
@@ -40,6 +42,7 @@
 	:root {
 		/*    LAYOUT    */
 		--sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
+    --sys-layout-size-multiplier: var(--ref-layout-size-multiplier-large);
 
 		/*    TYPOGRAPHY    */
 		--sys-font-display-size: var(--ref-font-display-size-large);
