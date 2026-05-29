@@ -4,7 +4,6 @@
 	import Stars from '$lib/components/Stars.svelte';
 	import ThemeChanger from '$lib/scripts/theme-changer.svelte';
 	import ref from '$lib/styles/ref.json';
-	import '$lib/styles/ref.css';
 	import '$lib/styles/sys.css';
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
@@ -30,9 +29,9 @@
 <style>
 	:global(html) {
 		background-color: black;
-		margin-left: var(--sys-layout-margin-horizontal);
-		margin-right: var(--sys-layout-margin-horizontal);
-		margin-top: var(--sys-layout-margin-top);
+		margin-left: var(--sys-space-m);
+		margin-right: var(sys-space-m);
+		margin-top: var(--sys-space-xl);
 		/* filter: blur(var(--sys-effect-blur)); */
 	}
 </style>

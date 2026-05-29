@@ -1,50 +1,34 @@
 :root {
-	/*    EFFECT    */
-	--sys-effect-blur: var(--ref-effect-blur);
+  /* EFFECT  */
+  --sys-blur-xs: 0.5px;
+  --sys-blur-m: 3px;
+  --sys-blur-xl: 16px;
 
-	/*    LAYOUT    */
+  /* LAYOUT  */
+  --sys-space-xs: 4px;
+  --sys-space-s: 8px;
+  --sys-space-m: 16px;
+  --sys-space-l: 24px;
+  --sys-space-xl: 32px;
 
-	/* small */
-	--sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-small);
-	--sys-layout-margin-top: var(--ref-layout-margin-top-small);
+  --sys-size-xs: 16px;
+  --sys-size-s: 24px;
+  --sys-size-m: 40px;
+  --sys-size-l: 64px;
+  --sys-size-xl: 96px;
+  --sys-size-xxl: 128px;
 
-	/* Padding's 4th word ranges from the number 1 to 3. 3 signifies the biggest padding, while 1 signifies the least padding. */
-	--sys-layout-padding-1: var(--ref-layout-padding-1-small);
-	--sys-layout-padding-2: var(--ref-layout-padding-2-small);
-	--sys-layout-padding-3: var(--ref-layout-padding-3-small);
+  /* TYPOGRAPHY  */
+  --sys-font-type1: 'Orbitron';
+  --sys-font-type2: 'Oxanium';
+  --sys-icon-type1: 'Icons';
+  --sys-font-alt: 0.8rem;
+  --sys-font-body: 1rem;
+  --sys-font-title: 2rem;
+  --sys-font-display: 3rem;
 
-	/* Size's 4th word ranges from the number 1 to 12. 12 signifies the biggest size, while 1 signifies the least size. */
-  --sys-layout-size-multiplier: var(--ref-layout-size-multiplier-small);
-
-	--sys-layout-size-1: calc(var(--ref-layout-size-1-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-2: calc(var(--ref-layout-size-2-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-3: calc(var(--ref-layout-size-3-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-4: calc(var(--ref-layout-size-4-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-5: calc(var(--ref-layout-size-5-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-6: calc(var(--ref-layout-size-6-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-7: calc(var(--ref-layout-size-7-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-8: calc(var(--ref-layout-size-8-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-9: calc(var(--ref-layout-size-9-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-10: calc(var(--ref-layout-size-10-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-11: calc(var(--ref-layout-size-11-small) * var(--sys-layout-size-multiplier));
-	--sys-layout-size-12: calc(var(--ref-layout-size-12-small) * var(--sys-layout-size-multiplier));
-
-	/*    TYPOGRAPHY    */
-	--sys-font-alt-size: var(--ref-font-alt-size);
-	--sys-font-display-family: var(--ref-font-display-family);
-
-	/* small */
-	--sys-font-display-size: var(--ref-font-display-size-small);
-}
-
-@media (min-width: 1200px) {
-	/* large */
-	:root {
-		/*    LAYOUT    */
-		--sys-layout-margin-horizontal: var(--ref-layout-margin-horizontal-large);
-    --sys-layout-size-multiplier: var(--ref-layout-size-multiplier-large);
-
-		/*    TYPOGRAPHY    */
-		--sys-font-display-size: var(--ref-font-display-size-large);
-	}
+  /* BREAK POINTS */
+  --compact: 600px;
+  --expanded: 840px;
+  --large: 1200px;
 }

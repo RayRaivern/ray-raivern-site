@@ -45,7 +45,7 @@
 <style>
 	.orbit_path {
 		--size: calc(
-			var(--sys-layout-size-12) * var(--radius) + var(--orbit_no) * var(--sys-layout-size-8)
+			var(--sys-size-xl) * var(--radius) + var(--orbit_no) * var(--sys-size-m)
 		);
 		height: var(--size);
 		width: var(--size);
@@ -59,9 +59,9 @@
 	}
 
 	.icon {
-		font-family: 'Icons';
+		font-family: var(--sys-icon-type1);
 		font-weight: normal;
-		font-size: var(--sys-layout-size-5);
+		font-size: var(--sys-size-s);
 		color: var(--md-sys-color-secondary);
 
     /* For removing default button CSS */

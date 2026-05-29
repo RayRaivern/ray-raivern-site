@@ -180,16 +180,16 @@
 
 <style>
 	.left {
-		margin-left: var(--sys-layout-padding-3);
+		margin-left: var(--sys-space-xl);
 	}
 	.right {
 		margin-left: auto;
-		margin-right: var(--sys-layout-padding-3);
+		margin-right: var(--sys-space-xl);
 	}
 	.planet {
 		position: relative;
-		height: calc(var(--sys-layout-size-12) * var(--radius));
-		width: calc(var(--sys-layout-size-12) * var(--radius));
+		height: calc(var(--sys-size-xl) * var(--radius));
+		width: calc(var(--sys-size-xl) * var(--radius));
 		background: radial-gradient(
 			circle at top right,
 			var(--colorLight),
@@ -200,8 +200,10 @@
 		border: none; /* In order to remove the default button border */
 		cursor: pointer;
 
-		margin-top: var(--sys-layout-padding-3);
-		margin-bottom: var(--sys-layout-padding-3);
+		margin-top: var(--sys-space-xl);
+		margin-bottom: var(sys-space-xl);
+
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
 	}
 
 	.img-overlay {
@@ -296,9 +298,9 @@
 	}
 
 	.typewrite {
-		font-family: var(--sys-font-label-family);
+		font-family: var(--sys-font-type2);
 		font-weight: normal;
-		font-size: 13px;
+		font-size: var(--sys-font-alt);
 		color: silver;
 
 		letter-spacing: 10%;

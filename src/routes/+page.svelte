@@ -36,7 +36,7 @@
 		rightAlign={true}
 		image={mars_img}
 		rotation={30}
-		text="HOBBIES"
+		text="TIMELINE"
 	>
 		{#each hobby_orbits as orbit, i}
 			<Orbit icon_code={orbit} orbit_no={i + 1} />
@@ -48,5 +48,7 @@
 	.planets {
 		display: flex;
 		flex-direction: column;
+		margin: auto auto;
+		/* max-width: 1000px; */
 	}
 </style>
