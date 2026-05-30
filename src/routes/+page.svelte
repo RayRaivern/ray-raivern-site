@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Planet from '$lib/components/Planet.svelte';
+	import Planet from '$lib/components/Planet/Planet.svelte';
 	import ref from '$lib/styles/ref.json';
 	import Title from '$lib/components/Title.svelte';
-	import Orbit from '$lib/components/Orbit.svelte';
+	import Orbit from '$lib/components/Planet/Orbit.svelte';
 
 	import jupiter_img from '$lib/assets/jupiter.jpg';
 	import mars_img from '$lib/assets/mars.jpg';
@@ -48,7 +48,6 @@
 	.planets {
 		display: flex;
 		flex-direction: column;
-		margin: auto auto;
 		/* max-width: 1000px; */
 	}
 </style>

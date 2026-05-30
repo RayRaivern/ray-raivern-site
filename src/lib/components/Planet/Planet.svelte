@@ -318,8 +318,8 @@
 	}
 
 	.typewrite-right {
-		width: 200%;
+		width: 100%;
 		text-align: right;
-		transform: translate(-120%, -185%);
+		transform: translate(-140%, -190%);
 	}
 </style>
