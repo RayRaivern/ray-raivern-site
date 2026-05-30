@@ -179,13 +179,6 @@
 </button>
 
 <style>
-	.left {
-		margin-left: var(--sys-space-xl);
-	}
-	.right {
-		margin-left: auto;
-		margin-right: var(--sys-space-xl);
-	}
 	.planet {
 		position: relative;
 		height: calc(var(--sys-size-xl) * var(--radius));
