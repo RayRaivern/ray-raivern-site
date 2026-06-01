@@ -26,7 +26,7 @@ export function starGenerator(
 		stars.push({
 			x: Math.random() * width,
 			y: Math.random() * height,
-			radius: Math.random() * radius,
+			radius: Math.random() * radius + 0.5,
 			opacity: Math.random() * 0.5 + 0.2,
 			color: colors[Math.floor(Math.random() * colors.length)],
 			phase: Math.random() * Math.PI * 2
@@ -34,4 +34,51 @@ export function starGenerator(
 	}
 
 	return stars;
+}
+
+
+// CSS to JS variable getter and setter:
+
+/**
+ * Retrieves the value of a CSS variable from the root element.
+ * @param name The name of the CSS variable (reference 'md_token.css')
+ * @returns The value of the variable, or an empty string if not found/server-side.
+ */
+export function getCSS(name: string): string {
+  if (typeof document === 'undefined') {
+    console.warn(`getCSS is called outside of a browser environment for property "${name}".`)
+    return false;
+  }
+  const element = document.body || document.documentElement;
+
+  try {
+    const computedStyle = getComputedStyle(element);
+    return computedStyle.getPropertyValue(name).trim();
+  } catch (error) {
+    console.error(`Failed to get CSS property "${name}":`, error);
+    return false; 
+  }
+}
+
+/**
+ * Sets the value of a CSS variable on the root element.
+ * @param name The name of the CSS variable (use 'md_token.css' as reference)
+ * @param value The value to assign to the variable
+ * @returns boolean true if successful, false if root is missing
+ */
+export function setCSS(name: string, value: string): boolean {
+  if (typeof document === 'undefined') {
+    console.warn(`setCSS called outside of a browser environment for property "${name}".`);
+    return false;
+  }
+  const element = document.documentElement || document.body;
+  if (!element) return false;
+
+  try {
+    element.style.setProperty(name, value);
+    return true; 
+  } catch (error) {
+    console.error(`Failed to set CSS property "${name}":`, error);
+    return false; 
+  }
 }

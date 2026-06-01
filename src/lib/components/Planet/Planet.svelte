@@ -151,7 +151,7 @@
 					y1="0"
 					x2="35"
 					y2="25"
-					stroke="gray"
+					stroke="var(--md-sys-color-outline)"
 					stroke-width="2"
 					in:draw
 					out:draw={{ delay: 600 }}
@@ -161,7 +161,7 @@
 					y1="25"
 					x2="60"
 					y2="25"
-					stroke="gray"
+					stroke="var(--md-sys-color-outline)"
 					stroke-width="2"
 					in:draw={{ delay: 600 }}
 					out:draw
@@ -253,10 +253,10 @@
 		transform: translate(-50%, -50%);
 
 		background-image:
-			linear-gradient(90deg, gray 50%, transparent 50%),
-			linear-gradient(90deg, gray 50%, transparent 50%),
-			linear-gradient(0deg, gray 50%, transparent 50%),
-			linear-gradient(0deg, gray 50%, transparent 50%);
+			linear-gradient(90deg, var(--md-sys-color-outline) 50%, transparent 50%),
+			linear-gradient(90deg, var(--md-sys-color-outline) 50%, transparent 50%),
+			linear-gradient(0deg, var(--md-sys-color-outline) 50%, transparent 50%),
+			linear-gradient(0deg, var(--md-sys-color-outline) 50%, transparent 50%);
 
 		background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
 		background-size:
@@ -294,7 +294,7 @@
 		font-family: var(--sys-font-type2);
 		font-weight: normal;
 		font-size: var(--sys-font-alt);
-		color: silver;
+		color: var(--md-sys-color-outline);
 
 		letter-spacing: 10%;
     line-height: 16px;

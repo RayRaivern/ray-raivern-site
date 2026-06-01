@@ -17,6 +17,8 @@
 		word-spacing: 100vw;
 		letter-spacing: 50%;
 		filter: blur(var(--sys-blur-xs))
-			drop-shadow(-4px 2px 0px var(--md-sys-color-secondary-container));
+			drop-shadow(-4px 4px 0px var(--md-sys-color-secondary-container));
+    user-select: none;
+    -webkit-user-select: none;
 	}
 </style>

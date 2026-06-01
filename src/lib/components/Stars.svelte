@@ -25,11 +25,12 @@
 		const ctx = canvas.getContext('2d');
 
 		let starCount = window.innerWidth * 0.15;
-		const stars = starGenerator(starCount, 1, width, height);
+		const stars = starGenerator(starCount, 0.5, width, height);
 		let animationID: number;
 
 		function animate(time: number) {
 			if (!ctx) throw new Error('Failed to get 2d context for canvas.');
+      ctx.globalAlpha = 1;
 
 			ctx.fillStyle = 'black';
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
