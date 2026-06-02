@@ -7,12 +7,13 @@
 	import '$lib/styles/sys.css';
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
+  import ColorOrb from '$lib/components/ColorOrb.svelte';
 
 	const palette = ref.palette;
 	let theme = $state({ color: palette['teal-neutral'] });
 	setContext('theme', theme);
-	let touch_signal = $state({ signal: false });
-	setContext('touch_signal', touch_signal);
+	let active_signal1 = $state({ signal: false });
+	setContext('active_signal1', active_signal1);
 
 	let { children } = $props();
 </script>
@@ -29,7 +30,10 @@
 		{@render children?.()}
 	</div>
 	<div class="secondary">
-		<p class="test">Test1</p>
+    <div class="test1">
+      <ColorOrb color="#869B7E"></ColorOrb>
+      <ColorOrb color="#5C4F4A"></ColorOrb>
+    </div>
 	</div>
 	<div class="tertiary">
 		<p class="test">Test2</p>
@@ -38,11 +42,11 @@
 
 <style>
 	:global(html) {
-		background-color: black;
+		/* background-color: var(--md-sys-color-background); */
 		margin-left: var(--sys-space-l);
 		margin-right: var(--sys-space-m);
 		margin-top: var(--sys-space-xl);
-		/* filter: blur(var(--sys-effect-blur)); */
+		/* filter: blur(var(--sys-blur-xs)); */
 	}
 
 	.test {

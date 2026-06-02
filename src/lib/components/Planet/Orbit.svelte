@@ -28,7 +28,7 @@
 				cy="50%"
 				r="50%"
 				fill="none"
-				stroke="gray"
+				stroke="var(--md-sys-color-outline)"
 				stroke-width="0.5%"
 				stroke-opacity="0.5"
 			/>

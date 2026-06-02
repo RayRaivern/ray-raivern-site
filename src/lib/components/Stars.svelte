@@ -30,10 +30,7 @@
 
 		function animate(time: number) {
 			if (!ctx) throw new Error('Failed to get 2d context for canvas.');
-      ctx.globalAlpha = 1;
-
-			ctx.fillStyle = 'black';
-			ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 			stars.forEach((star) => {
 				const twinkle = (Math.sin(time * 0.001 + star.phase) + 1) * 0.5;
@@ -75,5 +72,6 @@
 		height: 100%;
 		display: block;
 		z-index: -1;
+    background-color: black;
 	}
 </style>

@@ -1,7 +1,9 @@
 :root {
   /* EFFECT  */
   --sys-blur-xs: 0.5px;
+  --sys-blur-s: 1px;
   --sys-blur-m: 3px;
+  --sys-blur-l: 6px;
   --sys-blur-xl: 16px;
 
   /* LAYOUT  */

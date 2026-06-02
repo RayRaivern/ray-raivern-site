@@ -37,7 +37,7 @@
 	let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
-	let touch_signal = $state(getContext<{ signal: Boolean }>('touch_signal'));
+	let touch_signal = $state(getContext<{ signal: Boolean }>('active_signal1'));
 	let touch_buffer = false;
 	let hover_actual = false;
 	let anim_delay_off = false;
@@ -120,6 +120,7 @@
 
 <button
 	class="planet {rightAlign ? 'right' : 'left'}"
+  aria-label="Go to {text} page"
 	style="
     --colorDark: {colorDark};
     --colorNeutral: {colorNeutral};
@@ -194,12 +195,29 @@
 		cursor: pointer;
 
 		margin-top: var(--sys-space-xl);
-		margin-bottom: var(sys-space-xl);
+		margin-bottom: var(--sys-space-xl);
 
-    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 4px -4px var(--sys-blur-xl) var(--sys-blur-l) black;
 	}
 
-	.img-overlay {
+  .img-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+  }
+
+	.img-overlay::before {
+    content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -209,13 +227,7 @@
 		background-image: var(--bg_image);
 		background-size: cover;
 		background-repeat: repeat-x;
-		transform: rotate(-10deg) scale(1.2);
-
-		filter: grayscale(100%);
-		mix-blend-mode: multiply;
-		opacity: 0.7;
-		border-radius: 50%;
-		pointer-events: none;
+    transform: rotate(-10deg) scale(1.2);
 
 		animation: planet-rotation calc(2s * var(--rotation)) linear infinite;
 	}
