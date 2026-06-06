@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { starGenerator } from '$lib';
-	import { browser } from '$app/environment';
 
 	let canvas: HTMLCanvasElement;
 	let width = $state(0);
@@ -21,11 +20,10 @@
 	});
 
 	$effect(() => {
-		if (!browser) return;
 		const ctx = canvas.getContext('2d');
 
 		let starCount = window.innerWidth * 0.15;
-		const stars = starGenerator(starCount, 0.5, width, height);
+		const stars = starGenerator(starCount, 1, width, height);
 		let animationID: number;
 
 		function animate(time: number) {
@@ -33,13 +31,13 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 			stars.forEach((star) => {
-				const twinkle = (Math.sin(time * 0.001 + star.phase) + 1) * 0.5;
+				const twinkle = (Math.sin(time * 0.0008 + star.phase) + 1) * 0.5;
 				const minOpacity = star.opacity * 0.3; // 30% of max as minimum
 				const opacity = minOpacity + twinkle * (star.opacity - minOpacity);
 
 				ctx.fillStyle = star.color;
 				ctx.globalAlpha = opacity;
-				ctx.shadowBlur = star.radius * 10; // Adjust multiplier for "glow" intensity
+				ctx.shadowBlur = star.radius * 5; // Adjust multiplier for "glow" intensity
 				ctx.shadowColor = star.color;
 
 				ctx.beginPath();

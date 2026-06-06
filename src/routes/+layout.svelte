@@ -7,7 +7,7 @@
 	import '$lib/styles/sys.css';
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
-  import ColorOrb from '$lib/components/ColorOrb.svelte';
+  import ColorOrb from '$lib/components/Buttons/ColorOrb/ColorOrb.svelte';
 
 	const palette = ref.palette;
 	let theme = $state({ color: palette['teal-neutral'] });
