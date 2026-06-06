@@ -27,7 +27,7 @@
 		let animationID: number;
 
 		function animate(time: number) {
-			if (!ctx) throw new Error('Failed to get 2d context for canvas.');
+			if (!ctx) throw new Error('Failed to get canvas 2d context for background Stars.');
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 			stars.forEach((star) => {

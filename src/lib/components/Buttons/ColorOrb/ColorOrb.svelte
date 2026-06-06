@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
+	import ColorGas from './ColorGas.svelte';
 
 	interface Props {
 		color: string;
@@ -59,14 +60,6 @@
 	function touchMove() {
 		touch_move = true;
 	}
-
-	let canvas: HTMLCanvasElement;
-	let width: number = $state(0);
-	let height: number = $state(0);
-
-	$effect(() => {
-		const ctx = canvas.getContext('2d');
-	});
 </script>
 
 <div class="orb-wrapper" style="--color: {color}">
@@ -82,27 +75,20 @@
 	>
 		<div class="img-overlay"></div>
 	</button>
-	<div class="back"></div>
+	<ColorGas {color}></ColorGas>
 	<div class="stroke">
-		<!-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> -->
-		<!-- 	<path d="M 60 20 Q 80 30 80 50" stroke="white" stroke-width="2" fill="none" /> -->
-		<!-- </svg> -->
+		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<path d="M 70 20 Q 80 30 80 40" stroke="white" stroke-width="4" fill="white" />
+		</svg>
 	</div>
-	<canvas
-		class="canvas"
-		bind:this={canvas}
-		bind:clientWidth={width}
-		bind:clientHeight={height}
-		{width}
-		{height}
-	></canvas>
-	<div class="glower-{pressed}" style="--color: {color}"></div>
+	<div class="back"></div>
+	<div class="glower-{pressed}"></div>
 </div>
 
 <style>
 	.orb-all {
 		border: none;
-		background: var(--color);
+		background: var(--md-sys-color-outline-variant);
 		position: relative;
 		border-radius: 50%;
 
@@ -139,18 +125,6 @@
 		opacity: 0.1;
 	}
 
-	.canvas {
-		position: absolute;
-		inset: 0;
-		/* background: white; */
-		opacity: 0.5;
-		height: 80%;
-		width: 80%;
-		margin: auto;
-		border-radius: 50%;
-		z-index: -1;
-	}
-
 	.pressed-false {
 		cursor: pointer;
 	}
@@ -180,7 +154,7 @@
 		height: 100%;
 		width: 100%;
 		border-radius: 50%;
-		opacity: 0.7;
+		opacity: 0.5;
 		z-index: -1;
 	}
 </style>
