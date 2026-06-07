@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import { Gas } from './Particle';
 
   let { color } = $props();
@@ -8,12 +9,13 @@
 	let height: number = $state(0);
 	let gas_arr: Gas[] = [];
 	let gas_number = 5;
+  const interaction: () => { hover: boolean, pressed: boolean } = getContext('interaction');
 
 	$effect(() => {
 		if (!canvas || width === 0 || height === 0) return;
 
 		for (let index = 0; index < gas_number; index++) {
-			gas_arr.push(new Gas(width, height, color));
+			gas_arr.push(new Gas(width, height, color, interaction));
 		}
 
 		const ctx = canvas.getContext('2d');

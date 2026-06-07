@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
+	import { getContext, setContext } from 'svelte';
 	import ColorGas from './ColorGas.svelte';
 
 	interface Props {
@@ -8,6 +8,7 @@
 
 	let hover = $state(false);
 	let pressed = $state(false);
+  setContext('interaction', () => ({ hover, pressed }));
 	let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
