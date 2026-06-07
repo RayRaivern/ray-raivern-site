@@ -8,7 +8,9 @@ export class Gas {
   private y: number;
   private vx: number;
   private vy: number;
-  private radius = 5;
+  private max_radius = 30;
+  private min_radius = 15;
+  private radius = this.max_radius;
   private interaction: () => { hover: boolean, pressed: boolean };
 
   constructor(canvas_x: number, canvas_y: number, color: string, interaction: () => { hover: boolean, pressed: boolean }) {
@@ -46,8 +48,6 @@ export class Gas {
       if (this.x >= this.canvas_x || this.x <= 0) this.vx = -this.vx;
       if (this.y >= this.canvas_y || this.y <= 0) this.vy = -this.vy;
     }
-
-    console.log(hover, pressed);
   }
 
   public draw(ctx: CanvasRenderingContext2D): void {
@@ -56,9 +56,9 @@ export class Gas {
     this.update(hover, pressed);
 
     if (hover || pressed) {
-      this.radius = Math.max(10, this.radius - radius_rate);
+      this.radius = Math.max(this.min_radius, this.radius - radius_rate);
     } else {
-      this.radius = Math.min(25, this.radius + radius_rate);
+      this.radius = Math.min(this.max_radius, this.radius + radius_rate);
     }
 
     const gradient = ctx.createRadialGradient(this.x, this.y, this.radius * 0.1, this.x, this.y, this.radius);

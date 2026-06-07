@@ -74,12 +74,12 @@
 		ontouchmove={touchMove}
 		type="button"
 	>
-		<div class="img-overlay"></div>
+		<!-- <div class="img-overlay"></div> -->
 	</button>
 	<ColorGas {color}></ColorGas>
 	<div class="stroke">
 		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-			<path d="M 70 20 Q 80 30 80 40" stroke="white" stroke-width="4" fill="white" />
+			<path d="M 70 20 Q 85 25 85 40" stroke="white" stroke-width="4" fill="white" />
 		</svg>
 	</div>
 	<div class="back"></div>
@@ -88,20 +88,20 @@
 
 <style>
 	.orb-all {
-		border: none;
-		background: var(--md-sys-color-outline-variant);
+		background: none;
 		position: relative;
 		border-radius: 50%;
 
-		-webkit-mask-image: url('$lib/assets/metallic-button-border.webp');
-		mask-image: url('$lib/assets/metallic-button-border.webp');
-		-webkit-mask-size: cover;
-		mask-size: cover;
-		-webkit-mask-position: center;
-		mask-position: center;
+		/* -webkit-mask-image: url('$lib/assets/metallic-button-border.webp'); */
+		/* mask-image: url('$lib/assets/metallic-button-border.webp'); */
+		/* -webkit-mask-size: cover; */
+		/* mask-size: cover; */
+		/* -webkit-mask-position: center; */
+		/* mask-position: center; */
 
 		height: var(--sys-size-l);
 		width: var(--sys-size-l);
+    border: dashed var(--sys-border-s) var(--md-sys-color-outline);
 
 		/* background-color: var(--color); */
 	}
@@ -110,7 +110,7 @@
 		position: absolute;
 		inset: 0;
 
-		background-image: url('$lib/assets/metallic-button-border.webp');
+		background-image: url('$lib/assets/metal.jpg');
 		background-size: cover;
 		background-position: center;
 		/* filter: grayscale(100%); */
@@ -120,10 +120,14 @@
 	.back {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(to top right, rgba(255, 255, 255, 0), white);
+		background: radial-gradient(
+			circle at top right,
+			rgba(255,255,255,0.2),
+			rgba(255,255,255,0.1),
+			rgba(255,255,255,0)
+		);
 		border-radius: 50%;
 		z-index: -1;
-		opacity: 0.1;
 	}
 
 	.pressed-false {
@@ -155,7 +159,8 @@
 		height: 100%;
 		width: 100%;
 		border-radius: 50%;
-		opacity: 0.5;
+		opacity: 1;
 		z-index: -1;
+    filter: blur(var(--sys-blur-m));
 	}
 </style>

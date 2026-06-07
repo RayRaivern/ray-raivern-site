@@ -20,6 +20,12 @@
   --sys-size-xl: 96px;
   --sys-size-xxl: 128px;
 
+  --sys-border-xs: 1px;
+  --sys-border-s: 2px;
+  --sys-border-m: 4px;
+  --sys-border-l: 8px;
+  --sys-border-xl: 16px;
+
   /* TYPOGRAPHY  */
   --sys-font-type1: 'Orbitron';
   --sys-font-type2: 'Oxanium';

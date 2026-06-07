@@ -120,7 +120,7 @@
 
 <button
 	class="planet {rightAlign ? 'right' : 'left'}"
-  aria-label="Go to {text} page"
+	aria-label="Go to {text} page"
 	style="
     --colorDark: {colorDark};
     --colorNeutral: {colorNeutral};
@@ -197,27 +197,27 @@
 		margin-top: var(--sys-space-xl);
 		margin-bottom: var(--sys-space-xl);
 
-    box-shadow: inset 4px -4px var(--sys-blur-xl) var(--sys-blur-l) black;
+		box-shadow: inset 4px -4px var(--sys-blur-xl) var(--sys-blur-l) black;
 	}
 
-  .img-overlay {
+	.img-overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 
-    border-radius: 50%;
-    overflow: hidden;
-    pointer-events: none;
+		border-radius: 50%;
+		overflow: hidden;
+		pointer-events: none;
 
-    filter: grayscale(100%);
-    mix-blend-mode: multiply;
-    opacity: 0.7;
-  }
+		filter: grayscale(100%);
+		mix-blend-mode: multiply;
+		opacity: 0.7;
+	}
 
 	.img-overlay::before {
-    content: '';
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -227,7 +227,7 @@
 		background-image: var(--bg_image);
 		background-size: cover;
 		background-repeat: repeat-x;
-    transform: rotate(-10deg) scale(1.2);
+		transform: rotate(-10deg) scale(1.2);
 
 		animation: planet-rotation calc(2s * var(--rotation)) linear infinite;
 	}
@@ -309,22 +309,22 @@
 		color: var(--md-sys-color-outline);
 
 		letter-spacing: 10%;
-    line-height: 16px;
+		line-height: 16px;
 
-		position: inherit;
-		height: 50%;
-    /* Width is separated by alignment because right aligned needs more width for the text to have enough space not to shift towards the right. And putting too much width in left aligned will trigger a horizontal scroll. */
+		position: absolute;
+		text-wrap: nowrap;
+		/* Width is separated by alignment because right aligned needs more width for the text to have enough space not to shift towards the right. And putting too much width in left aligned will trigger a horizontal scroll. */
 	}
 
 	.typewrite-left {
-		width: 100%;
-		text-align: left;
-		transform: translate(140%, -182%);
+		left: 100%;
+		top: 100%;
+		transform: translate(32px, 24px);
 	}
 
 	.typewrite-right {
-		width: 100%;
-		text-align: right;
-		transform: translate(-140%, -190%);
+		right: 100%;
+		top: 100%;
+		transform: translate(-24px, 16px);
 	}
 </style>

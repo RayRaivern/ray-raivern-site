@@ -54,8 +54,8 @@
 		position: absolute;
 		inset: 0;
 		/* background: var(--md-sys-color-surface-variant); */
-		height: 80%;
-		width: 80%;
+		height: 90%;
+		width: 90%;
 		margin: auto;
 		border-radius: 50%;
 		z-index: -1;
