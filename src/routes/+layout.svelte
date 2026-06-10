@@ -9,6 +9,7 @@
 	import { setContext } from 'svelte';
 	import SideBar from '$lib/components/SideBar.svelte';
 	import ThemeDrawerToggle from '$lib/components/ThemeDrawer/ThemeDrawerToggle.svelte';
+  import ThemeDrawerContent from '$lib/components/ThemeDrawer/ThemeDrawerContent.svelte';
 
 	const palette = ref.palette;
 	let theme = $state({ color: palette['teal-neutral'] });
@@ -31,7 +32,7 @@
 		{@render children?.()}
 	</div>
 	<div class="secondary">
-		<SideBar></SideBar>
+    <ThemeDrawerContent></ThemeDrawerContent>
 		<div class="theme">
 			<ThemeDrawerToggle></ThemeDrawerToggle>
 		</div>

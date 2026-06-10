@@ -23,7 +23,7 @@
 		const ctx = canvas.getContext('2d');
 
 		let starCount = window.innerWidth * 0.2;
-		const stars = starGenerator(starCount, 1, width, height);
+		const stars = starGenerator(starCount, 1.5, width, height);
 		let animationID: number;
 
 		function animate(time: number) {
@@ -37,7 +37,7 @@
 
 				ctx.fillStyle = star.color;
 				ctx.globalAlpha = opacity;
-				ctx.shadowBlur = star.radius * 5;
+				ctx.shadowBlur = star.radius * 2;
 				ctx.shadowColor = star.color;
 
 				ctx.beginPath();
@@ -70,6 +70,6 @@
 		display: block;
 		z-index: -1;
 		background-color: black;
-		filter: blur(1.5px);
+		filter: blur(1px);
 	}
 </style>

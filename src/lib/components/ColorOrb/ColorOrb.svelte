@@ -21,8 +21,8 @@
 	$effect(() => {
 		if (active_signal.signal || !active_signal.signal) {
 			if (!active_buffer && pressed) {
-				pressed = false;
 				mouseLeave();
+				pressed = false;
 			}
 
 			active_buffer = false;

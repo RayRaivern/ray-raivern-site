@@ -35,7 +35,7 @@ export class Gas {
 
   private update(hover: boolean, pressed: boolean): void {
     if (hover || pressed) {
-      let speed = 0.05;
+      let speed = 0.5;
       let centre_x = this.canvas_x / 2;
       let centre_y = this.canvas_y / 2;
 
@@ -52,7 +52,7 @@ export class Gas {
 
   public draw(ctx: CanvasRenderingContext2D): void {
     const { hover, pressed } = this.interaction();
-    let radius_rate = 0.05;
+    let radius_rate = 0.5;
     this.update(hover, pressed);
 
     if (hover || pressed) {
