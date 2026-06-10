@@ -7,7 +7,8 @@
 	import '$lib/styles/sys.css';
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
-  import ColorOrb from '$lib/components/Buttons/ColorOrb/ColorOrb.svelte';
+	import SideBar from '$lib/components/SideBar.svelte';
+	import ThemeDrawerToggle from '$lib/components/ThemeDrawer/ThemeDrawerToggle.svelte';
 
 	const palette = ref.palette;
 	let theme = $state({ color: palette['teal-neutral'] });
@@ -30,10 +31,10 @@
 		{@render children?.()}
 	</div>
 	<div class="secondary">
-    <div class="test1">
-      <ColorOrb color="#869B7E"></ColorOrb>
-      <ColorOrb color="#5C4F4A"></ColorOrb>
-    </div>
+		<SideBar></SideBar>
+		<div class="theme">
+			<ThemeDrawerToggle></ThemeDrawerToggle>
+		</div>
 	</div>
 	<div class="tertiary">
 		<p class="test">Test2</p>
@@ -43,7 +44,7 @@
 <style>
 	:global(html) {
 		/* background-color: var(--md-sys-color-background); */
-		margin-left: var(--sys-space-l);
+		margin-left: var(--sys-space-m);
 		margin-right: var(--sys-space-m);
 		margin-top: var(--sys-space-xl);
 		/* filter: blur(var(--sys-blur-xs)); */
@@ -59,31 +60,33 @@
 		grid-template-areas: 'main';
 	}
 
-  .secondary, .tertiary {
-    display: none;
-  }
+	.secondary,
+	.tertiary {
+		display: none;
+	}
 
-  @media (min-width: 600px){
-    .container {
-      grid-template-columns: 1fr 2fr;
-      grid-template-areas: "left main";
-    }
+	@media (min-width: 600px) {
+		.container {
+			grid-template-columns: var(--sys-pane-left) 1fr;
+			grid-template-areas: 'left main';
+		}
 
-    .secondary {
-      display: block;
-    }
-  }
+		.secondary {
+			display: block;
+		}
+	}
 
-  @media (min-width: 1200px) {
-    .container {
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-template-areas: "left main right";
-    }
+	@media (min-width: 1200px) {
+		.container {
+			grid-template-columns: var(--sys-pane-left) 2fr 1fr;
+			grid-template-areas: 'left main right';
+		}
 
-    .secondary, .tertiary {
-      display: block;
-    }
-  }
+		.secondary,
+		.tertiary {
+			display: block;
+		}
+	}
 
 	.primary {
 		grid-area: main;
@@ -91,6 +94,12 @@
 
 	.secondary {
 		grid-area: left;
+	}
+
+	.theme {
+		position: fixed;
+		bottom: 0px;
+		left: var(--sys-space-xl);
 	}
 
 	.tertiary {

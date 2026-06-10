@@ -79,7 +79,7 @@
 	<ColorGas {color}></ColorGas>
 	<div class="stroke">
 		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-			<path d="M 70 20 Q 85 25 85 40" stroke="white" stroke-width="4" fill="white" />
+			<path d="M 60 15 Q 85 20 85 40" stroke="white" stroke-width="4" fill="white" />
 		</svg>
 	</div>
 	<div class="back"></div>

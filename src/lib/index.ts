@@ -27,7 +27,7 @@ export function starGenerator(
       x: Math.random() * width,
       y: Math.random() * height,
       radius: Math.random() * radius + 0.5,
-      opacity: Math.random() * 0.5 + 0.3,
+      opacity: Math.random() * 0.5 + 0.5,
       color: colors[Math.floor(Math.random() * colors.length)],
       phase: Math.random() * Math.PI * 2
     });

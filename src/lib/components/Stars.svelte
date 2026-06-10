@@ -22,29 +22,28 @@
 	$effect(() => {
 		const ctx = canvas.getContext('2d');
 
-		let starCount = window.innerWidth * 0.15;
+		let starCount = window.innerWidth * 0.2;
 		const stars = starGenerator(starCount, 1, width, height);
 		let animationID: number;
 
 		function animate(time: number) {
 			if (!ctx) throw new Error('Failed to get canvas 2d context for background Stars.');
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 			stars.forEach((star) => {
 				const twinkle = (Math.sin(time * 0.0008 + star.phase) + 1) * 0.5;
-				const minOpacity = star.opacity * 0.3; // 30% of max as minimum
+				const minOpacity = star.opacity * 0; // 0.[value]% of max as minimum
 				const opacity = minOpacity + twinkle * (star.opacity - minOpacity);
 
 				ctx.fillStyle = star.color;
 				ctx.globalAlpha = opacity;
-				ctx.shadowBlur = star.radius * 5; // Adjust multiplier for "glow" intensity
+				ctx.shadowBlur = star.radius * 5;
 				ctx.shadowColor = star.color;
 
 				ctx.beginPath();
 				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
 				ctx.fill();
 
-				// reset for next stars
 				ctx.shadowBlur = 0;
 			});
 
@@ -70,6 +69,7 @@
 		height: 100%;
 		display: block;
 		z-index: -1;
-    background-color: black;
+		background-color: black;
+		filter: blur(1.5px);
 	}
 </style>

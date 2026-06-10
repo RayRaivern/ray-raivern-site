@@ -6,13 +6,10 @@
   --sys-blur-l: 6px;
   --sys-blur-xl: 16px;
 
-  /* LAYOUT  */
-  --sys-space-xs: 4px;
-  --sys-space-s: 8px;
-  --sys-space-m: 16px;
-  --sys-space-l: 24px;
-  --sys-space-xl: 32px;
+  --sys-opacity-transparent: 0.5;
+  --sys-opacity-opaque: 1;
 
+  /* SIZES */
   --sys-size-xs: 16px;
   --sys-size-s: 24px;
   --sys-size-m: 40px;
@@ -25,6 +22,20 @@
   --sys-border-m: 4px;
   --sys-border-l: 8px;
   --sys-border-xl: 16px;
+
+  --sys-border-radius-s: 2px;
+  --sys-border-radius-m: 4px;
+  --sys-border-radius-l: 6px;
+
+
+  /* LAYOUT  */
+  --sys-pane-left: 300px;
+
+  --sys-space-xs: 4px;
+  --sys-space-s: 8px;
+  --sys-space-m: 16px;
+  --sys-space-l: 24px;
+  --sys-space-xl: 32px;
 
   /* TYPOGRAPHY  */
   --sys-font-type1: 'Orbitron';

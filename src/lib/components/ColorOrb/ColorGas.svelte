@@ -59,6 +59,7 @@
 		margin: auto;
 		border-radius: 50%;
 		z-index: -1;
+    filter: blur(var(--sys-blur-m));
 	}
 
 </style>

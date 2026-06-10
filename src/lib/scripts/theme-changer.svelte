@@ -13,10 +13,13 @@
 
 <style>
 	:global(*) {
+    --time: 800ms;
 		transition:
-			background-color 800ms ease-out,
-			border-color 800ms linear,
-			color 800ms ease-in,
-			filter 800ms ease-out;
+			background-color var(--time) ease-out,
+			border-color var(--time) linear,
+			color var(--time) ease-in,
+			filter var(--time) ease-out,
+			stroke var(--time) ease-out,
+			fill var(--time) ease-out;
 	}
 </style>
