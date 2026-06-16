@@ -4,7 +4,6 @@ type Star = {
   y: number;
   radius: number;
   opacity: number;
-  color: string;
   phase: number;
 };
 
@@ -21,14 +20,12 @@ export function starGenerator(
   height: number
 ): Star[] {
   const stars: Star[] = [];
-  const colors: string[] = ['#ffffff', '#BFE9EE', '#D9CAED', '#EEE9BB'];
   for (let i = 0; i < count; i++) {
     stars.push({
       x: Math.random() * width,
       y: Math.random() * height,
       radius: Math.random() * radius + 0.5,
       opacity: Math.random() * 0.5 + 0.5,
-      color: colors[Math.floor(Math.random() * colors.length)],
       phase: Math.random() * Math.PI * 2
     });
   }

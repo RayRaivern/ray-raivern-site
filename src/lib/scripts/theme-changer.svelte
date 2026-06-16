@@ -4,16 +4,20 @@
 		themeFromSourceColor,
 		applyTheme
 	} from '@material/material-color-utilities';
+	import { colorChange } from '$lib/styles/colors.svelte';
 
 	let { color }: { color: string } = $props();
 
 	const theme = $derived(themeFromSourceColor(argbFromHex(color)));
-	$effect(() => applyTheme(theme, { target: document.body, dark: true }));
+	$effect(() => {
+		applyTheme(theme, { target: document.body, dark: true });
+    colorChange();
+	});
 </script>
 
 <style>
 	:global(*) {
-    --time: 800ms;
+		--time: 800ms;
 		transition:
 			background-color var(--time) ease-out,
 			border-color var(--time) linear,

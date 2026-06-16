@@ -27,6 +27,7 @@
   --sys-border-radius-m: 4px;
   --sys-border-radius-l: 6px;
 
+  --sys-peek-size: 16px;
 
   /* LAYOUT  */
   --sys-pane-left: 300px;

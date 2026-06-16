@@ -8,8 +8,7 @@
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
 	import SideBar from '$lib/components/SideBar.svelte';
-	import ThemeDrawerToggle from '$lib/components/ThemeDrawer/ThemeDrawerToggle.svelte';
-  import ThemeDrawerContent from '$lib/components/ThemeDrawer/ThemeDrawerContent.svelte';
+  import ThemeDrawer from '$lib/components/ThemeDrawer/ThemeDrawer.svelte';
 
 	const palette = ref.palette;
 	let theme = $state({ color: palette['teal-neutral'] });
@@ -32,9 +31,8 @@
 		{@render children?.()}
 	</div>
 	<div class="secondary">
-    <ThemeDrawerContent></ThemeDrawerContent>
 		<div class="theme">
-			<ThemeDrawerToggle></ThemeDrawerToggle>
+      <ThemeDrawer></ThemeDrawer>
 		</div>
 	</div>
 	<div class="tertiary">
