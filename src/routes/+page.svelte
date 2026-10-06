@@ -22,6 +22,7 @@
 			colorNeutral={palette['teal-neutral']}
 			colorLight="white"
 			colorDark="black"
+      colorTheme={palette.teal}
 			rightAlign={false}
 			image={jupiter_img}
 			rotation={20}
@@ -38,6 +39,7 @@
 			colorNeutral={palette['red-neutral']}
 			colorLight="white"
 			colorDark="black"
+      colorTheme={palette.red}
 			rightAlign={true}
 			image={mars_img}
 			rotation={30}

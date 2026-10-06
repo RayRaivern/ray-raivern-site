@@ -11,8 +11,10 @@
   import ThemeDrawer from '$lib/components/ThemeDrawer/ThemeDrawer.svelte';
 
 	const palette = ref.palette;
-	let theme = $state({ color: palette['teal-neutral'] });
+	let theme = $state({ color: palette['teal'] });
+	let applied_theme = $state({ color: palette['teal'] });
 	setContext('theme', theme);
+	setContext('applied_theme', applied_theme);
 	let active_signal1 = $state({ signal: false });
 	setContext('active_signal1', active_signal1);
 

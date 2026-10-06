@@ -1,7 +1,9 @@
 <script lang="ts">
-	import ColorOrb from '../ColorOrb/ColorOrb.svelte';
+	import ColorOrb from '$lib/components/ColorOrb/ColorOrb.svelte';
+	import ref from '$lib/styles/ref.json';
 
-	let colors = ['#116A7B', '#7F2020', '#E5BA41', '#9AB17A', '#B08BBB', '#EED3D9'];
+  let palette = ref.palette;
+	let colors = [palette.teal, palette.red, palette.yellow, palette.olive, palette.lavender, palette.peach];
 </script>
 
 <div class="container">
@@ -33,7 +35,6 @@
 	.container {
 		display: grid;
 		grid-template-columns: repeat(3, max-content);
-		width: max-content;
 
 		border: solid var(--sys-border-s) var(--md-sys-color-secondary);
 	}

@@ -1,75 +1,70 @@
 <script lang="ts">
-</script>
-
-<button
-	aria-label="open theme drawer"
->
-	<div class="container">
-		<div class="triangle">
-			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect
-					x="0"
-					y="0"
-					width="24"
-					height="24"
-					fill="var(--md-sys-color-secondary-container)"
-					mask="url(#triangleMask)"
-				/>
-				<path
-					d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
-					stroke="var(--md-sys-color-on-secondary-container)"
-					stroke-width="2"
-				></path>
-				<mask id="triangleMask">
-					<rect x="0" y="0" width="24" height="24" fill="white" />
-					<path
-						d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
-						stroke="black"
-						stroke-width="2"
-						fill="black"
-					/>
-				</mask>
-			</svg>
-		</div>
-		<div class="text">Theme Drawer</div>
-		<div class="triangle">
-			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect
-					x="0"
-					y="0"
-					width="24"
-					height="24"
-					fill="var(--md-sys-color-secondary-container)"
-					mask="url(#triangleMask)"
-				/>
-				<path
-					d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
-					stroke="var(--md-sys-color-on-secondary-container)"
-					stroke-width="2"
-				></path>
-				<mask id="triangleMask">
-					<rect x="0" y="0" width="24" height="24" fill="white" />
-					<path
-						d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
-						stroke="black"
-						stroke-width="2"
-						fill="black"
-					/>
-				</mask>
-			</svg>
-		</div>
-	</div>
-</button>
-
-<style>
-  button {
-    all: unset;
-    cursor: pointer;
-    display: block;
+  interface Props {
+    trigger: boolean;
   }
 
+  let {trigger}: Props = $props();
+</script>
+
+<div class="container">
+	<div class="triangle trigger-{trigger}">
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<rect
+				x="0"
+				y="0"
+				width="24"
+				height="24"
+				fill="var(--md-sys-color-secondary-container)"
+				mask="url(#triangleMask)"
+			/>
+			<path
+				d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
+				stroke="var(--md-sys-color-on-secondary-container)"
+				stroke-width="2"
+			></path>
+			<mask id="triangleMask">
+				<rect x="0" y="0" width="24" height="24" fill="white" />
+				<path
+					d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
+					stroke="black"
+					stroke-width="2"
+					fill="black"
+				/>
+			</mask>
+		</svg>
+	</div>
+	<div class="text">Theme Drawer</div>
+	<div class="triangle trigger-{trigger}">
+		<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<rect
+				x="0"
+				y="0"
+				width="24"
+				height="24"
+				fill="var(--md-sys-color-secondary-container)"
+				mask="url(#triangleMask)"
+			/>
+			<path
+				d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
+				stroke="var(--md-sys-color-on-secondary-container)"
+				stroke-width="2"
+			></path>
+			<mask id="triangleMask">
+				<rect x="0" y="0" width="24" height="24" fill="white" />
+				<path
+					d="M10.2934 4.79256C11.0733 3.51643 12.9267 3.51643 13.7066 4.79256L21.1404 16.9571C21.9549 18.2898 20.9957 20 19.4339 20H4.56611C3.00425 20 2.04512 18.2898 2.85955 16.9571L10.2934 4.79256Z"
+					stroke="black"
+					stroke-width="2"
+					fill="black"
+				/>
+			</mask>
+		</svg>
+	</div>
+</div>
+
+<style>
 	.container {
-		width: var(--sys-pane-left);
+    width: calc(3 * var(--sys-size-l) + 6 * var(--sys-space-m));
 		height: var(--sys-size-m);
 		display: grid;
 		grid-template-columns: var(--sys-size-m) 1fr var(--sys-size-m);
@@ -104,4 +99,12 @@
 		height: 100%;
 		background: none;
 	}
+
+  /* .triangle svg { */
+  /*   transition: transform 0s 0.5s; */
+  /* } */
+
+  .trigger-true svg {
+    transform: rotate(180deg);
+  }
 </style>

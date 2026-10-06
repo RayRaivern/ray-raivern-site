@@ -12,37 +12,24 @@
 	let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
+	let applied_theme = getContext<{ color: string }>('applied_theme');
 	let color_original = theme.color;
-	let active_signal = $state(getContext<{ signal: Boolean }>('active_signal1'));
-	let active_buffer = false;
 
 	let { color }: Props = $props();
 
 	$effect(() => {
-		if (active_signal.signal || !active_signal.signal) {
-			if (!active_buffer && pressed) {
-				mouseLeave();
-				pressed = false;
-			}
-
-			active_buffer = false;
-		}
+		if (applied_theme.color == color) pressed = true;
+    else pressed = false;
 	});
-
-	function updateTheme() {
-		theme.color = color;
-	}
 
 	function mouseEntry() {
 		color_original = theme.color;
-		updateTheme();
+		theme.color = color;
 		hover = true;
 	}
 
 	function mouseClick() {
-		pressed = true;
-		active_buffer = true;
-		active_signal.signal = !active_signal.signal;
+    applied_theme.color = color;
 	}
 
 	function mouseLeave() {

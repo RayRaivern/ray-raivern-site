@@ -8,6 +8,7 @@
 		colorDark: string;
 		colorNeutral: string;
 		colorLight: string;
+    colorTheme: string;
 		/** Multiplier applied to the circle size. Range: 0.5 to 1.5 */
 		radius: number;
 		/** Determines if the component is right-aligned */
@@ -25,6 +26,7 @@
 		colorDark,
 		colorNeutral,
 		colorLight,
+    colorTheme,
 		radius,
 		rightAlign,
 		image,
@@ -37,6 +39,7 @@
 	let touch_move = false;
 
 	let theme = getContext<{ color: string }>('theme');
+	let applied_theme = getContext<{ color: string }>('applied_theme');
 	let touch_signal = $state(getContext<{ signal: Boolean }>('active_signal1'));
 	let touch_buffer = false;
 	let hover_actual = false;
@@ -59,7 +62,8 @@
 
 	function updateTheme() {
 		console.log('Running theme updater.');
-		theme.color = colorNeutral;
+		theme.color = colorTheme;
+    applied_theme.color = colorTheme;
 	}
 
 	function mouseEntry() {
