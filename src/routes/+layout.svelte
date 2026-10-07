@@ -7,7 +7,7 @@
 	import '$lib/styles/sys.css';
 	import '$lib/styles/fonts.css';
 	import { setContext } from 'svelte';
-	import SideBar from '$lib/components/SideBar.svelte';
+  import SideBar from '$lib/components/SideBar/SideBar.svelte';
   import ThemeDrawer from '$lib/components/ThemeDrawer/ThemeDrawer.svelte';
 
 	const palette = ref.palette;
@@ -33,6 +33,9 @@
 		{@render children?.()}
 	</div>
 	<div class="secondary">
+    <div class="sidebar">
+      <SideBar></SideBar>
+    </div>
 		<div class="theme">
       <ThemeDrawer></ThemeDrawer>
 		</div>

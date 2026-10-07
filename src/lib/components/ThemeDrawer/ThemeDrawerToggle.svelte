@@ -64,7 +64,7 @@
 
 <style>
 	.container {
-    width: calc(3 * var(--sys-size-l) + 6 * var(--sys-space-m));
+    width: calc(3 * var(--sys-size-l) + 6 * var(--sys-space-m) + 4 * var(--sys-border-s));
 		height: var(--sys-size-m);
 		display: grid;
 		grid-template-columns: var(--sys-size-m) 1fr var(--sys-size-m);

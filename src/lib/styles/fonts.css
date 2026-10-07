@@ -32,3 +32,10 @@
 	font-weight: normal;
 	src: url(/fonts/font_awesome/fa-brands-400.woff2) format(woff2);
 }
+
+@font-face {
+  font-family: 'Icons2';
+  font-style: normal;
+  font-weight: normal;
+	src: url(/fonts/font_awesome/fa-solid-900.woff2) format(woff2);
+}
